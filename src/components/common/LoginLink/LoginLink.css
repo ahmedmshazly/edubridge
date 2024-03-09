@@ -1,0 +1,19 @@
+.login-link {
+    text-align: center; /* Center the text within its container */
+    margin-top: 15px; /* Add some space above the link for separation */
+    font-size: 16px; /* Ensure the text is easily readable */
+    color: #666; /* A neutral, readable color */
+}
+
+.login-link a {
+    color: #227C97; /* Color matching the form's theme */
+    text-decoration: none; /* Remove the underline from links */
+    font-weight: bold; /* Make the link text slightly bolder */
+    transition: color 0.3s ease-in-out, text-decoration 0.3s ease-in-out; /* Smooth transition for color and decoration */
+}
+
+.login-link a:hover, .login-link a:focus {
+    color: #195f6d; /* A darker shade for hover/focus state */
+    text-decoration: underline; /* Re-add underline on hover/focus for clear interactivity */
+    outline: none; /* Remove the outline to keep the focus style clean */
+}

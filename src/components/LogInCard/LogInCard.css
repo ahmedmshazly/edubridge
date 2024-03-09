@@ -1,0 +1,81 @@
+.login-card {
+  display: grid;
+  height: 100vh;
+  /* Full viewport height */
+
+}
+
+.card-content {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  margin-top: 5%;
+}
+
+
+@keyframes pulseLogo {
+  0% {
+    transform: scale(1);
+    /* Original size */
+  }
+
+  50% {
+    transform: scale(1.05);
+    /* Slightly larger */
+  }
+
+  100% {
+    transform: scale(1);
+    /* Back to original size */
+  }
+}
+
+
+.logo {
+  width: 16vw;
+  padding-bottom: 3vh;
+  object-fit: contain;
+  animation: pulseLogo 2s infinite ease-in-out
+    /* position: absolute;  */
+}
+
+
+.guest-btn {
+  align-self: end;
+  justify-self: center;
+  padding: 15%;
+}
+
+p {
+  font-family: "Urbanist", sans-serif;
+  margin: 0;
+  text-align: center;
+  font-optical-sizing: auto;
+  font-size: 1.5vw;
+  font-weight: 500;
+  font-style: normal;
+}
+
+
+h1 {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 5vw;
+  margin: 0;
+}
+
+
+.log-slogan {
+  padding-bottom: 3vh;
+}
+
+.google-auth-logo {
+  width: 1.5vw;
+  /* Example width, adjust as necessary */
+  height: auto;
+  max-height: 7vh;
+  /* Maintain aspect ratio */
+}
+

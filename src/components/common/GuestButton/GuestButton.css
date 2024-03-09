@@ -1,0 +1,18 @@
+.guest-button {
+    background: none; /* Remove background */
+    border: none; /* Remove border */
+    color: #227C97; /* Text color to match the theme */
+    font-size: 16px; /* Consistent font size with the form */
+    cursor: pointer; /* Indicate that it's clickable */
+    text-decoration: underline; /* Mimic link appearance */
+    display: block; /* Ensure it's properly aligned and block-level for easier centering */
+    text-align: center; /* Center the text itself */
+    transition: color 0.3s ease-in-out; /* Smooth transition for color change */
+}
+
+.guest-button:hover, .guest-button:focus {
+    color: #195f6d; /* Darker shade on hover/focus for feedback */
+    outline: none; /* Avoid default focus outline */
+    text-decoration: none; /* Remove underline on hover/focus for a clean look */
+}
+

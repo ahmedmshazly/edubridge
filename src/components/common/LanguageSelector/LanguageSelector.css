@@ -1,0 +1,50 @@
+.language-selector {
+  position: relative;
+  width: auto;
+  cursor: pointer;
+  user-select: none; /* Prevent text selection */
+  font-family: Arial, sans-serif; /* Ensure text is clearly readable */
+  font-size: 1vw;
+}
+
+.selected-language {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Ensures space for the arrow */
+  gap: .5vw; /* Space between image, text, and arrow */
+  padding: .5vw 1.5vh; /* Slightly more padding for better appearance */
+  background-color: #ffffff; /* White background as requested */
+  border: 1px solid #112A40; /* Border color as specified */
+  border-radius: 20px; /* Rounded corners for a pill shape */
+  transition: background-color 0.3s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+
+.options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff; /* White background for consistency */
+  border: 1px solid #112A40; /* Matching border color */
+  border-radius: 10px; 
+  width: calc(100% - 4px); /* Adjust width to account for border */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-top: 5px; /* Add some space between selector and options */
+  overflow: hidden; /* Ensures the rounded corners affect children */
+  z-index: 10;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: .5vw 1.5vh; /* Slightly more padding for better appearance */
+  transition: background-color 0.3s ease-in-out;
+}
+
+.option:hover {
+  background-color: #e0e0e0; /* Highlight option on hover */
+}
+
+/* Adjustments for scrollable options and image styling remain the same */

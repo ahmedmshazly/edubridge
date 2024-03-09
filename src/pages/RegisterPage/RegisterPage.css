@@ -1,0 +1,59 @@
+.register-page {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    height: 100vh;
+    /* Full viewport height */
+    /* justify-items: center;
+    align-items: center; */
+
+}
+
+.card {
+    height: 100vh;
+    /* Full viewport height */
+    display: grid;
+    padding: 1%;
+    grid-template-columns: 10% 80% 10%;
+    grid-row: 1 / span 1;
+
+}
+
+.bg {
+    position: fixed ; /* or absolute, depending on layout */
+    top: 0;
+    right: 0;
+    width: 50%; /* Half of the viewport width */
+    height: 100vh; /* Full viewport height */
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+}
+
+.card {
+    position: relative;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20vw;
+    height: 20vh;
+    background-color: #112A40;
+    border-radius: 50%;
+    transform: translate(50%, -50%);
+    z-index: -1;
+}
+
+
+.header{
+    /* position: sticky;
+    top: 0;
+    left: 0; */
+    grid-row-start: span 1;
+    align-self: start;
+    justify-self: start;
+    padding: 25%;
+
+}
