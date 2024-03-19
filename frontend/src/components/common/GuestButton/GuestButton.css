@@ -1,0 +1,20 @@
+.guest-button {
+    font-family: "Urbanist", sans-serif;
+    padding: 5%;
+    background: none;
+    border: none;
+    color: #227C97;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    transition: color 0.3s ease-in-out;
+}
+
+.guest-button:hover, .guest-button:focus {
+    color: #112A40;
+    outline: none;
+    text-decoration: none;
+}
+
+
