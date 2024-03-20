@@ -1,5 +1,4 @@
 const { validateCanvasStructure } = require('../utils/canvasValidation'); // Adjust path as needed
-const { canvasTemplate } = require('../templates/canvasTemplate'); // Adjust path as needed
 // Import other templates as needed
 
 exports.checkDatasetType = (req, res, next) => {
@@ -54,3 +53,4 @@ exports.validateDatasetStructure = (req, res, next) => {
         return res.status(400).json({ message: 'Invalid JSON structure. Ensure your file is properly formatted as JSON.' });
     }
 };
+

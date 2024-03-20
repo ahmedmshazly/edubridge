@@ -7,6 +7,7 @@ import ProtectedRoute from "./components/ProtectedRoute.jsx"; // Ensure this com
 import Home from './pages/home.jsx';
 
 import './App.css';
+import DashboardPage from './pages/DashboardPage/DashboardPage.jsx';
 
 function App() {
     return (
@@ -17,6 +18,7 @@ function App() {
                 <Route path="/register" element={<RegistrationPage />} />
                 <Route element={<ProtectedRoute />}>
                     <Route path="/home" element={<Home />} />
+                    <Route path="/dashboard" element={<DashboardPage />} />
                     {/* Add other protected routes here */}
                 </Route>
                 <Route path="*" element={<NotFoundPage />} /> {/* Handle all unmatched routes */}

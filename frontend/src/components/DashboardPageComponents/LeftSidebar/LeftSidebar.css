@@ -1,0 +1,63 @@
+.left-sidebar--deshboard {
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+    margin-right: 2.5%;
+    font-family: 'Lexend', sans-serif;
+    overflow-y: auto;
+    position: relative;
+    transition: margin-left 0.3s; 
+}
+
+.top-logo-name {
+    position: sticky;
+    width: 80%;
+    top: 0;
+    background: #f2f2f2;
+    z-index: 10;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    margin: 0;
+}
+
+.top-logo {
+    width: 50px;
+    height: auto;
+}
+
+h3{
+    margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    
+
+    .top-logo-name {
+        justify-content: space-evenly; 
+        flex-direction: column;
+
+    }
+    h3{
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further adjustments for very small devices */
+    .top-logo-name {
+        flex-direction: column; /* Stack logo and name */
+        align-items: center; /* Align items to the start */
+    }
+
+    .top-logo {
+        width: 40px; /* Smaller logo on very small screens */
+    }
+
+    h3{
+        font-size: 12px;
+    }
+}

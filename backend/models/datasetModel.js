@@ -29,12 +29,16 @@ const datasetSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  studentCount: {
+    type: Number,
+    required: true,
+    default: 0, // Default value if not specified
+  },
 }, {
   timestamps: true, // Adds createdAt and updatedAt timestamps
 });
 
-// Optionally, you can add methods or statics to the schema here
-// For example, a method to check the validity of the dataset's structure
+
 
 // Compile and export the model
 const Dataset = mongoose.model('Dataset', datasetSchema);

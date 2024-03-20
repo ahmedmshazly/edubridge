@@ -1,7 +1,7 @@
 const express = require('express');
 const multer = require('multer');
 const { checkDatasetType, validateDatasetStructure } = require('../middleware/datasetValidation');
-const { addDataset, getDatasetsByUser, getDatasetDetails } = require('../controllers/datasetController');
+const { addDataset, getDatasetsByUser, getDatasetDetails, deleteDataset } = require('../controllers/datasetController');
 const requireAuth = require('../middleware/requireAuth');
 
 
@@ -22,5 +22,9 @@ router.get('/', getDatasetsByUser);
 
 // Get details for a specific dataset by ID
 router.get('/:id', getDatasetDetails);
+
+// Delete a specific dataset by ID
+router.delete('/:id', deleteDataset);
+
 
 module.exports = router;
