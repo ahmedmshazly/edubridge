@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation, useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useLocation, useNavigate } from 'react-router-dom';
 import './TopNavbar.css';
 import logo from '../../../assets/images/logo.png';
 import homeIcon from '../../../assets/images/home.svg';
@@ -10,27 +10,37 @@ import contactIcon from '../../../assets/images/contact.png';
 
 const TopNavbar = () => {
     const location = useLocation();
-    const navigate = useNavigate(); // Instantiate useNavigate
+    const navigate = useNavigate();
 
     // Define nav items
     const navItems = [
-        { path: '/', icon: homeIcon, text: 'Home' },
-        { path: '/about', icon: aboutIcon, text: 'About' },
-        { path: '/dashboard', icon: databaseIcon, text: 'Databases' },
+        { path: '/', icon: homeIcon, text: 'Dashboard' },
+        { path: '/reports', icon: databaseIcon, text: 'Reports' },
         { path: '/settings', icon: servicesIcon, text: 'Settings' },
-        { path: '/contact', icon: contactIcon, text: 'Contact' },
     ];
 
+    const isActive = (path) => location.pathname === path;
+
     return (
-        <nav className="navItems">
-            {navItems.map(item => (
-                <button
-                    key={item.text}
-                    className={`navButton ${location.pathname === item.path ? 'active' : ''}`}
-                    onClick={() => navigate(item.path)}>
-                    <img src={item.icon} alt={item.text} className="icon" /> {item.text}
-                </button>
-            ))}
+        <nav className="top-navbar">
+            <div className="logo-container" onClick={() => navigate('/')}>
+                <img src={logo} alt="EduBridge Analytics" />
+            </div>
+            <div className="nav-items-container">
+                {navItems.map((item) => (
+                    <div
+                        key={item.text}
+                        className={`nav-item ${isActive(item.path) ? 'active' : ''}`}
+                        onClick={() => navigate(item.path)}
+                    >
+                        <img src={item.icon} alt={item.text} />
+                        <span>{item.text}</span>
+                    </div>
+                ))}
+            </div>
+            <div className="logout-container" onClick={() => {/* handle logout logic here */}}>
+                <span>Logout</span>
+            </div>
         </nav>
     );
 };

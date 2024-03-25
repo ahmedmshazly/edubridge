@@ -29,7 +29,7 @@ const RegisterForm = () => {
     } else if (!isLoading && !error && Object.keys(touched).length !== 0) {
       // If there's no error and loading is false, navigate or do another action
       console.log("Registration successful, navigate or perform success action");
-      navigate('/home'); //Uncomment to use
+      navigate('/login'); 
     }
   }, [error, isLoading]);
 

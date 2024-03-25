@@ -1,4 +1,4 @@
-.login--page--container{
+.login-page-container{
     display: flex;
     flex-direction: row-reverse;
     background-color: #f2f2f2;
@@ -6,7 +6,7 @@
 }
 
 @media (max-width: 768px) {
-    .login--page--container{
+    .login-page-container{
         flex-direction: column;
     }
 }

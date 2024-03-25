@@ -3,8 +3,8 @@ import './LeftSidebar.css';
 
 // images 
 import logo from "../../../assets/images/logo.png"
-import TopNavbar from '../../common/TopNavbar/TopNavbar';
-import SideBarNumbers from '../../DashboardPageComponents/SideBarNumbers/SideBarNumbers.jsx';
+import LeftNavbar from '../../common/LeftNavbar/LeftNavbar.jsx';
+import SideBarNumbers from '../../DatasetsPageComponents/SideBarNumbers/SideBarNumbers.jsx';
 import IdentityCard from '../IdentityCard/IdentityCard.jsx';
 
 const LeftSidebar = () => {
@@ -14,7 +14,7 @@ const LeftSidebar = () => {
         <span><img className='top-logo' src={logo} alt="" /></span>
         <h3>EduBridge</h3>
       </div>
-      <TopNavbar/>
+      <LeftNavbar/>
       <SideBarNumbers/>
       <IdentityCard/>
     </div>

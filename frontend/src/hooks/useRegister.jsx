@@ -25,8 +25,8 @@ export const useRegister = () => {
                 setError(json.error || 'An error occurred during registration.');
 
             } else {
-                localStorage.setItem('user', JSON.stringify(json));
-                dispatch({ type: 'LOGIN', payload: json });
+                // localStorage.setItem('user', JSON.stringify(json));
+                // dispatch({ type: 'LOGIN', payload: json });
                 setIsLoading(false);
             }
         } catch (err) {

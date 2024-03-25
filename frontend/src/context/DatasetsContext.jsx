@@ -56,7 +56,7 @@ export const DatasetsContextProvider = ({ children }) => {
         };
     
         fetchDatasets();
-    }, []); // Removed state from dependencies to prevent re-fetching on state updates
+    }, []); 
     
 
     // Function to delete a dataset
@@ -79,8 +79,33 @@ export const DatasetsContextProvider = ({ children }) => {
         }
     };
 
+     // Function to add a dataset
+     const addDataset = async (formData) => {
+        const userJSON = localStorage.getItem('user');
+        const user = userJSON ? JSON.parse(userJSON) : null;
+
+        if (user && user.token) {
+            try {
+                const response = await fetch('/api/datasets/upload', {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${user.token}`,
+                    },
+                    body: formData,
+                });
+                if (!response.ok) throw new Error('Failed to add dataset');
+
+                const addedDataset = await response.json();
+                dispatch({ type: 'ADD_DATASET', payload: addedDataset });
+            } catch (error) {
+                console.error('Error adding dataset:', error);
+                throw error; // Rethrow the error if you want to handle it (e.g., show an error message) in the component where addDataset is called
+            }
+        }
+    };
+
     return (
-        <DatasetsContext.Provider value={{ ...state, dispatch, deleteDataset }}>
+        <DatasetsContext.Provider value={{ ...state, dispatch, deleteDataset, addDataset }}>
             {children}
         </DatasetsContext.Provider>
     );

@@ -1,11 +1,16 @@
-// src/components/common/Divider.js
 import React from 'react';
 import './Divider.css';
 
-const Divider = ({ children }) => {
+/**
+ * A reusable Divider component that displays optional text content.
+ * The component can be extended to accept style props for customization.
+ */
+const Divider = ({ children, style }) => {
   return (
-
-    <div className="divider"><span>{children}</span></div>
+    // Using a div here due to the inclusion of text. For a purely decorative divider, consider <hr>.
+    <div className="divider" style={style}>
+      <span>{children}</span>
+    </div>
   );
 };
 

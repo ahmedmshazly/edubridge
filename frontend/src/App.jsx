@@ -1,27 +1,33 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'; // Import Navigate here
-import RegistrationPage from "./pages/RegisterationPage/RegisterationPage.jsx";
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+// Pages
 import LoginPage from "./pages/LoginPage/LoginPage.jsx";
-import NotFoundPage from "./pages/NotFoundPage/NotFoundPage.jsx";
-import ProtectedRoute from "./components/ProtectedRoute.jsx"; // Ensure this component is updated as per initial instructions
-import Home from './pages/home.jsx';
-
+import RegistrationPage from "./pages/RegisterationPage/RegisterationPage.jsx"; // Corrected typo
+import Home from './pages/Home.jsx'; // Ensure consistency in naming and file structure
+import Other from './pages/Other.jsx'; // Ensure consistency in naming and file structure
+import DatasetsPage from './pages/DatasetsPage/DatasetsPage.jsx';
+import NotFoundPage from './pages/NotFoundPage/NotFoundPage.jsx';
+// Components
+import ProtectedRoute from "./components/ProtectedRoute.jsx";
+// Styles
 import './App.css';
-import DashboardPage from './pages/DashboardPage/DashboardPage.jsx';
 
 function App() {
     return (
         <Router>
             <Routes>
-                <Route path="/" element={<Navigate replace to="/home" />} /> {/* Redirect "/" to "/home" */}
+                <Route path="/" element={<Navigate replace to="/home" />} />
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/register" element={<RegistrationPage />} />
+                {/* Protected routes wrapper */}
                 <Route element={<ProtectedRoute />}>
                     <Route path="/home" element={<Home />} />
-                    <Route path="/dashboard" element={<DashboardPage />} />
-                    {/* Add other protected routes here */}
+                    <Route path="/other" element={<Other />} />
+                    <Route path="/datasets" element={<DatasetsPage />} />
+                    {/* Additional protected routes can be nested here */}
                 </Route>
-                <Route path="*" element={<NotFoundPage />} /> {/* Handle all unmatched routes */}
+                {/* Catch-all for unmatched routes */}
+                <Route path="*" element={<NotFoundPage />} />
             </Routes>
         </Router>
     );

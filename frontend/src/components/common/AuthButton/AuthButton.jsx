@@ -1,17 +1,15 @@
-// src/components/common/AuthButton.js
 import React from 'react';
-import './AuthButton.css'; 
-
-// Images
+import './AuthButton.css';
 import GoogleLogo from '../../../assets/images/google.png';
 
-
-const AuthButton = ({ className, children, onClick }) => {
+const AuthButton = ({ className = '', children, onClick }) => {
   return (
-    <button className={`auth--button ${className}`} onClick={onClick}>
-      <img className='auth--button--google-logo' src={GoogleLogo} alt='google-auth-logo' />{children}
+    <button className={`auth-button ${className}`} onClick={onClick}>
+      <img className='auth-button__google-logo' src={GoogleLogo} alt='Sign in with Google' />
+      {children}
     </button>
   );
 };
+
 
 export default AuthButton;

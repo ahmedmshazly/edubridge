@@ -2,11 +2,12 @@
     display: flex;
     flex-direction: column;
     width: 25vw;
+    height: 100vh;
     margin-right: 2.5%;
     font-family: 'Lexend', sans-serif;
     overflow-y: auto;
     position: relative;
-    transition: margin-left 0.3s; 
+    transition: margin-left 0.3s;
 }
 
 .top-logo-name {
@@ -28,36 +29,41 @@
     height: auto;
 }
 
-h3{
+h3 {
     margin: 0;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    
+
 
     .top-logo-name {
-        justify-content: space-evenly; 
+        justify-content: space-evenly;
         flex-direction: column;
 
     }
-    h3{
+
+    h3 {
         font-size: 16px;
     }
 }
 
 @media (max-width: 480px) {
+
     /* Further adjustments for very small devices */
     .top-logo-name {
-        flex-direction: column; /* Stack logo and name */
-        align-items: center; /* Align items to the start */
+        flex-direction: column;
+        /* Stack logo and name */
+        align-items: center;
+        /* Align items to the start */
     }
 
     .top-logo {
-        width: 40px; /* Smaller logo on very small screens */
+        width: 40px;
+        /* Smaller logo on very small screens */
     }
 
-    h3{
+    h3 {
         font-size: 12px;
     }
 }

@@ -1,8 +1,18 @@
 import React, { useState, useEffect } from 'react';
+// Hooks
 import { useNavigate } from 'react-router-dom';
-import RegisterationLink from '../../LoginPageComponents/RegisterationLink/RegisterationLink.jsx';
 import { useLogin } from '../../../hooks/useLogin'; // Import useLogin hook
+
+// Components
+import RegistrationLink from '../../LoginPageComponents/RegisterationLink/RegisterationLink.jsx';
+
+// functions
+// TODO: import { validateEmail, validatePassword } from '../../../utils/validators'; // Assume these are implemented
+
+// Styles
 import './LoginForm.css';
+
+// Images
 
 const LoginForm = () => {
   const [formData, setFormData] = useState({
@@ -87,9 +97,10 @@ const LoginForm = () => {
       {errors.password && <p className="error">{errors.password}</p>}
       {serverError && <p className="error server-error">{serverError}</p>}
       <button type="submit" disabled={!isFormValid || isLoading}>{isLoading ? 'Logging in...' : 'Login'}</button>
-      <RegisterationLink />
+      <RegistrationLink />
     </form>
   );
 };
 
 export default LoginForm;
+""

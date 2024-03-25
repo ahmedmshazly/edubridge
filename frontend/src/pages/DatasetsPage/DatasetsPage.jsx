@@ -1,12 +1,10 @@
 import React from "react";
-import { useLogout } from "../../hooks/useLogout";
+import { useLogout } from "../../hooks/useLogout.jsx";
 import { useNavigate } from 'react-router-dom';
-import './DashboardPage.css'; // Ensure the path matches your file structure
-import LeftSidebar from "../../components/DashboardPageComponents/LeftSidebar/LeftSidebar";
-import DatasetsList from "../../components/DashboardPageComponents/DatasetsList/DatabaseList.jsx";
-// images
+import './DatasetsPage.css'; // Ensure the path matches your file structure
+import LeftSidebar from "../../components/DatasetsPageComponents/LeftSidebar/LeftSidebar.jsx";
+import DatasetsList from "../../components/DatasetsPageComponents/DatasetsContainer/DatasetsContainer.jsx";
 
-// components and pages
 
 
 export default function DashboardPage() {
@@ -18,7 +16,7 @@ export default function DashboardPage() {
         logout();
         navigate('/login');
     }
-    // Parse the user information from localStorage
+
     return (
         <div className="dashboard-container">
             <LeftSidebar/>
