@@ -1,4 +1,4 @@
-const { validateCanvasStructure } = require('../utils/canvasValidation'); // Adjust path as needed
+const { validateCanvasStructure } = require('../validations/canvasValidation'); // Adjust path as needed
 // Import other templates as needed
 
 exports.checkDatasetType = (req, res, next) => {
@@ -14,10 +14,8 @@ exports.checkDatasetType = (req, res, next) => {
 
 exports.validateDatasetStructure = (req, res, next) => {
     try {
-        console.log("Starting");
         const dataset = JSON.parse(req.file.buffer.toString()); // Parse the JSON data from the uploaded file
         let validationResults;
-        console.log("Dataset made");
 
         // Switch based on the dataset type indicated in the request
         switch (req.datasetType) {
@@ -35,22 +33,20 @@ exports.validateDatasetStructure = (req, res, next) => {
         }
 
         // Handle validation results
-        if (validationResults.missing.length > 0 || validationResults.extras.length > 0 || validationResults.notes.length > 0) {
-            // Constructing a response object to include only non-empty arrays
-            let response = {
-                message: "Dataset structure validation issues",
-            };
-
-            if (validationResults.missing.length > 0) response.missing = validationResults.missing;
-            if (validationResults.extras.length > 0) response.extras = validationResults.extras;
-            if (validationResults.notes.length > 0) response.notes = validationResults.notes;
-
-            return res.status(400).json(response);
+        // Adjust to proceed with optional field issues, storing notes
+        if (validationResults.missing.length > 0 || validationResults.extras.length > 0) {
+            return res.status(400).json({
+                message: "Dataset structure validation failed for required or unexpected fields.",
+                missing: validationResults.missing,
+                extras: validationResults.extras,
+            });
         }
 
+        // Attach validation notes to the request for further processing
+        req.validationNotes = validationResults.notes;
         next();
     } catch (error) {
-        return res.status(400).json({ message: 'Invalid JSON structure. Ensure your file is properly formatted as JSON.' });
+        return res.status(400).json({ message: 'Invalid JSON structure.' });
     }
 };
 

@@ -1,6 +1,6 @@
 .datasets-container {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   margin: auto;
   width: 65vw;
   padding: 20px;
@@ -45,9 +45,12 @@
 }
 
 .datasets-search {
-  display: flex; /* Use flexbox to align children */
-  justify-content: start; /* Horizontally center the child */
-  margin-bottom: 20px; /* Space below the search bar */
+  display: flex;
+  /* Use flexbox to align children */
+  justify-content: start;
+  /* Horizontally center the child */
+  margin-bottom: 20px;
+  /* Space below the search bar */
   width: 65vw;
 }
 
@@ -111,7 +114,8 @@
 }
 
 
-.no-datasets {
+.no-datasets,
+.loading-datasets {
   text-align: center;
   padding: 20px;
   color: #666;
@@ -189,7 +193,8 @@
     margin-top: 10px;
   }
 
-  .no-datasets {
+  .no-datasets,
+  .loading-datasets {
     font-size: 0.9em;
   }
 }
@@ -231,7 +236,8 @@
     /* Provide spacing between elements */
   }
 
-  .no-datasets {
+  .no-datasets,
+  .loading-datasets {
     font-size: 0.85em;
     /* Adjust font size for smaller screens */
     padding: 15px;

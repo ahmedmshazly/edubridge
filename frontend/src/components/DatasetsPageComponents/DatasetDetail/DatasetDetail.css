@@ -1,19 +1,42 @@
+/* Styles for the navigation tabs */
+.navigation-tabs {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #f2f2f2; /* Light grey background */
+  border-bottom: 1px solid #ddd; /* Light grey bottom border */
+  margin-bottom: 1%;
+}
+
 .navigation-tabs button {
-    padding: 10px;
-    margin-right: 5px;
-    background-color: #f0f0f0;
-    border: 1px solid #ddd;
-    cursor: pointer;
-  }
-  
-  .navigation-tabs button.active {
-    background-color: #007bff;
-    color: white;
-  }
-  
-  .tab-content {
-    padding: 20px;
-    border: 1px solid #ddd;
-    margin-top: 10px;
-  }
-  
+  padding: 10px 20px;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 16px; /* Medium font size */
+  font-family: 'Lexend', sans-serif;
+}
+
+/* Style for the active tab */
+.navigation-tabs button.active {
+  border-bottom: 3px solid #227C97; /* Blue bottom border for active tab */
+  font-weight: bold; /* Make text bold for active tab */
+}
+
+/* Hover effect for buttons */
+.navigation-tabs button:hover {
+  background-color: #e8e8e8; /* Slightly darker grey on hover */
+}
+
+/* Tab content area */
+.tab-content {
+  padding: 20px;
+  background-color: #f2f2f2f2; /* White background for content */
+  /* border: 1px solid #ddd;  */
+}
+
+/* Add a little space at the top of the content */
+.tab-content > *:first-child {
+  margin-top: 0;
+}

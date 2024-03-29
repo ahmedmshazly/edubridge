@@ -1,22 +1,30 @@
+// Imports
 import React, { useState, useEffect } from 'react';
-import DatasetAddForm from '../DatasetAddForm/DatasetAddForm'; // Adjust the path as necessary
-import DatasetListDisplay from '../DatasetListDisplay/DatasetListDisplay'; // Adjust the path as necessary
-import DatasetDetail from '../DatasetDetail/DatasetDetail.jsx'; // Adjust the path as necessary
-import { useDatasetsContext } from '../../../hooks/useDatasetsContext'; // Adjust the path as necessary
-import Other from '../../../pages/Other.jsx'
-import './DatasetsContainer.css'; // Assuming you might want a separate CSS for container-specific styling
+
+// Hooks
+import { useDatasetsContext } from '../../../hooks/useDatasetsContext'; 
+
+// Style
+import './DatasetsContainer.css'; 
+
+// Components
+import DatasetAddForm from '../DatasetAddForm/DatasetAddForm';
+import DatasetListDisplay from '../DatasetListDisplay/DatasetListDisplay.jsx'; 
+import DatasetDetail from '../DatasetDetail/DatasetDetail.jsx'; 
 
 const DatasetsContainer = () => {
   const [currentView, setCurrentView] = useState('list'); // Default to showing the list
   const [selectedDatasetName, setSelectedDatasetName] = useState('');
-  const { datasets, deleteDataset, addDataset } = useDatasetsContext();
+  const { datasets, loading, deleteDataset, addDataset } = useDatasetsContext();
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredDatasets, setFilteredDatasets] = useState([]);
   const [isUploading, setIsUploading] = useState(false);
-
+  
+  
   const getButtonText = () => {
     return currentView === 'list' ? 'New Dataset' : 'Show Datasets';
   };
+  
   useEffect(() => {
     // Filter datasets based on the search term
     const filter = searchTerm === '' ? datasets : datasets.filter(dataset =>
@@ -62,8 +70,8 @@ const DatasetsContainer = () => {
             deleteDataset={deleteDataset}
             handleCardClick={(datasetName) => {
               setSelectedDatasetName(datasetName);
-              setCurrentView('datasetDetail');
-            }}
+              setCurrentView('datasetDetail');}}
+            isLoading={loading}
           />
         </>
       )}
