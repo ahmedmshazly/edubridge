@@ -1,0 +1,70 @@
+/* General styles for the questions container */
+.questions-container {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 65vw; /* Dynamically adjusts width based on the viewport width */
+    padding: 20px;
+    font-family: 'Lexend', sans-serif; /* Consistent font family */
+}
+
+.questions-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.questions-header h1 {
+    color: #112A40; /* Dark navy blue for heading */
+    margin: 0;
+}
+
+.toggle-view-btn {
+    padding: 10px 20px;
+    background-color: #112A40;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.toggle-view-btn:hover {
+    background-color: #227C97; /* Lighten background on hover for interaction feedback */
+}
+
+.questions-search input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px; /* Increase font size for better readability */
+}
+
+/* Responsive adjustments for the container */
+@media (max-width: 768px) {
+    .questions-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .toggle-view-btn {
+        margin-top: 10px; /* Add space between header and button when stacked */
+    }
+
+    .questions-search input {
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .questions-container {
+        padding: 10px; /* Reduce padding in smaller screens */
+    }
+
+    .questions-header h1 {
+        font-size: 1.2em; /* Adjust font size for smaller screens */
+    }
+}

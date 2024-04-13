@@ -1,0 +1,45 @@
+/* Styles for the DatasetDetail component */
+.dataset-detail {
+  font-family: 'Lexend', sans-serif;
+}
+
+.navigation-tabs {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #f2f2f2; /* Light grey background */
+  border-bottom: 1px solid #ddd; /* Light grey bottom border */
+  padding: 0 10px;
+}
+
+.navigation-tabs button {
+  padding: 10px 20px;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  color: #112A40; /* Dark navy blue text */
+  font-size: 16px;
+}
+
+.navigation-tabs button.active {
+  border-bottom: 3px solid #227C97; /* Blue bottom border for active tab */
+  font-weight: bold;
+}
+
+.navigation-tabs button:hover {
+  background-color: #e8e8e8; /* Slightly darker grey on hover */
+}
+
+.tab-content {
+  padding: 20px;
+  background-color: #f2f2f2; /* Matching the tab background */
+  color: #112A40; /* Dark navy blue text */
+}
+
+@media (max-width: 768px) {
+  .navigation-tabs {
+      flex-direction: column;
+      align-items: center;
+  }
+}

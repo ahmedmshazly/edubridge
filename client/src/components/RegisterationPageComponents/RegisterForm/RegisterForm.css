@@ -1,0 +1,125 @@
+.register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    background: #f7f7f7;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    min-width: 60%;
+    max-width: 80%;
+    margin: auto;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    font-family: "Urbanist", sans-serif;
+}
+
+.register-form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.register-form input[type="text"],
+.register-form input[type="email"],
+.register-form input[type="password"] {
+    font-family: "Urbanist", sans-serif;
+    min-height: 15px;
+    padding: 6px ;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.register-form input[type="text"]:hover,
+.register-form input[type="email"]:hover,
+.register-form input[type="password"]:hover {
+    border-color: #227C97;
+}
+
+.register-form input[type="text"]:focus,
+.register-form input[type="email"]:focus,
+.register-form input[type="password"]:focus {
+    border-color: #227C97;
+    box-shadow: 0 0 8px rgba(34,124,151,0.4);
+}
+
+.register-form .remember-me {
+    font-family: "Urbanist", sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.register-form .remember-me input[type="checkbox"] {
+    accent-color: #227C97;
+}
+
+.register-form .remember-me label {
+    margin: 0;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+
+.register-form .remember-me label:hover {
+    color: #227C97;
+}
+
+.register-form button {
+    font-family: "Urbanist", sans-serif;
+    border: 1px solid #112A40; 
+    border-radius: 20px;
+    padding: 6px 6px;
+    background-color: #227C97;
+    color: #f2f2f2;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.register-form button:hover {
+    color: #112A40;
+    background-color: #f2f2f2; 
+    cursor: pointer; 
+    transform: scale(1.05); 
+    border-color: #227C97; 
+}
+
+.register-form button:focus {
+    outline: 2px solid #007bff; 
+    outline-offset: 2px; 
+    border-color: #007bff; 
+}
+
+.register-form button:disabled {
+    background-color: #999999; 
+    cursor: not-allowed; 
+    color: #666666; 
+  }
+  
+  .register-form button:disabled:hover {
+    transform: none; 
+    background-color: #999999;
+    color: #666666; 
+  }
+
+
+.error {
+    color: #D8000C;
+    background-color: #FFD2D2;
+    padding: 4px;
+    margin: 0 0;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.server-error {
+    color: #D8000C;
+    background-color: #FFBABA;
+    padding: 4px;
+    margin: 2px 0;
+    border-radius: 4px;
+    font-size: 14px;
+}

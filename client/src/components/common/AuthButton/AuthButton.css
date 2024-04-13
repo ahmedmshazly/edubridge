@@ -1,0 +1,47 @@
+.auth-button {
+    font-family: "Urbanist", sans-serif;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    max-width: 80%;
+    min-width: 50%;
+    padding: 6px;
+    margin: 15px;
+    background-color: #227C97;
+    color: #f2f2f2;
+    border: 1px solid #112A40; 
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s, border-color 0.3s; 
+}
+
+.auth-button:hover {
+    color: #112A40;
+    background-color: #f2f2f2; 
+    cursor: pointer; 
+    transform: scale(1.1); 
+    border-color: #227C97; 
+}
+
+.auth-button:focus {
+    outline: 2px solid #007bff; 
+    outline-offset: 2px; 
+    border-color: #007bff; 
+}
+
+
+.auth-button__google-logo {
+    width: 14px;
+    height: auto;
+  }
+
+  @media (max-width: 768px) {
+   
+}
+
+@media (max-width: 480px) {
+    .auth-button{
+    font-size: 11px;
+    }
+}

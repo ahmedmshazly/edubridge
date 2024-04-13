@@ -1,0 +1,65 @@
+/* Main container styling */
+.validation-notes-container {
+    padding: 20px;
+    background-color: #f9f9f9; /* Light background for contrast */
+    border-radius: 8px; /* Smooth edges for modern look */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin: 20px auto;
+    max-width: 600px; /* Optimal for readability, adjust as needed */
+  }
+  
+  /* Styling for each student's notes container */
+  .student-notes {
+    margin-bottom: 20px; /* Space between each student's notes section */
+  }
+  
+  /* Button to toggle notes visibility */
+  .student-notes-header {
+    background-color: #007bff; /* Primary color for visibility */
+    color: white; /* Contrast for readability */
+    border: none; /* Remove default border */
+    border-radius: 4px; /* Rounded corners */
+    padding: 10px 15px; /* Adequate padding for interaction */
+    cursor: pointer; /* Indicate clickable */
+    text-align: left; /* Align text to the left */
+    width: 100%; /* Expand button to full container width */
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+  }
+  
+  .student-notes-header:hover {
+    background-color: #0056b3; /* Darker shade on hover for interaction feedback */
+  }
+  
+  /* Container for the notes of a student */
+  .notes-container {
+    padding: 10px; /* Padding around notes */
+    margin-top: 10px; /* Space between button and notes */
+    background-color: #fff; /* Contrast against container background */
+    border: 1px solid #ccc; /* Define boundary */
+    border-radius: 4px; /* Consistent rounded corners */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); /* Softer shadow for depth */
+  }
+  
+  /* Individual note styling */
+  .note {
+    padding: 5px 0; /* Space around note text */
+    border-bottom: 1px solid #eee; /* Separator between notes */
+  }
+  
+  .note:last-child {
+    border-bottom: none; /* Remove separator for the last item */
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .validation-notes-container {
+      padding: 15px; /* Slightly reduce padding for space efficiency */
+      margin: 10px; /* Adjust margins for smaller screens */
+    }
+  
+    .student-notes-header {
+      padding: 8px 12px; /* Adjust padding for smaller touch targets */
+    }
+  }
+  

@@ -1,0 +1,49 @@
+/* Styles for the engagementOverview component */
+.engagement-overview {
+    font-family: 'Lexend', sans-serif;
+}
+
+.engagement-overview .tabs {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: #f2f2f2; /* Light grey background */
+    margin-bottom: 1%;
+}
+
+.engagement-overview .tab-button {
+    padding: 10px 15px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: #112A40; /* Dark navy blue text */
+    font-size: 16px;
+}
+
+.engagement-overview .tab-button.active {
+    border-bottom: 3px solid #227C97; /* Blue bottom border for active tab */
+    font-weight: bold;
+}
+
+.engagement-overview .tab-button:hover {
+    background-color: #e8e8e8; /* Slightly darker grey on hover */
+}
+
+.engagement-overview .tab-content {
+    padding: 20px;
+    background-color: #f2f2f2; /* Light grey background */
+    color: #112A40; /* Dark navy blue text */
+}
+
+@media (max-width: 768px) {
+    .engagement-overview .tabs {
+        justify-content: center;
+    }
+
+    .engagement-overview .tab-button {
+        flex-grow: 1;
+        text-align: center;
+    }
+}

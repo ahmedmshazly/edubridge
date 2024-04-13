@@ -1,0 +1,83 @@
+/* General form styling */
+.dataset-upload-form {
+    /* max-width: 600spx; */
+    /* margin: 0 auto; */
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dataset-upload-form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Improves readability and focus */
+.dataset-upload-form label:not(.upload-area-label) {
+    margin-top: 20px;
+}
+
+.dataset-upload-form input,
+.dataset-upload-form select,
+.dataset-upload-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensures padding does not affect the total width */
+}
+
+.dataset-upload-form textarea {
+    height: 100px; /* Adjusts the default height */
+}
+
+/* Upload area specific styling */
+.upload-area {
+    border: 2px dashed #ccc;
+    border-radius: 4px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: border 0.3s ease;
+}
+
+.upload-area.drag-over {
+    border-color: #00a8ff;
+    background-color: #e1f5fe;
+}
+
+/* Submit button styling */
+.dataset-upload-form button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dataset-upload-form button:disabled {
+    background-color: #a5a5a5;
+    cursor: default;
+}
+
+.dataset-upload-form button:hover:not(:disabled) {
+    background-color: #45a049;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .dataset-upload-form {
+        padding: 10px;
+    }
+
+    .dataset-upload-form label {
+        margin-top: 15px;
+    }
+}

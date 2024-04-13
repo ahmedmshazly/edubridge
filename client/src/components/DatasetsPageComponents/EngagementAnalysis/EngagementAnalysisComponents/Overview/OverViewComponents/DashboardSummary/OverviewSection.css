@@ -1,0 +1,188 @@
+/* DashboardSummary.css Enhancements */
+
+.dashboard-summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+  transition: transform 0.2s ease-in-out, box-shadow 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card::before {
+  content: attr(data-tooltip); /* Tooltip text */
+  position: absolute;
+  bottom: 100%; /* Position above the card */
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  background-color: #227C97; /* Tooltip background */
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  z-index: 10;
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(5px);
+  border-width: 5px;
+  border-style: solid;
+  border-color: #227C97 transparent transparent transparent;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.card:hover::before,
+.card:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+  color: #112A40;
+  margin-bottom: 15px;
+}
+
+.card p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #eee; /* Adds a subtle line between each stat for clarity */
+  padding-bottom: 10px;
+}
+
+.card p:last-child {
+  border-bottom: none; /* Removes the line from the last stat for cleanliness */
+}
+
+
+/* Tooltip styling */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #227C97;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.card:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 80%;
+    margin: 10px 0;
+  }
+}
+
+.card:focus-within {
+  box-shadow: 0 0 0 2px #227C97;
+  outline: none;
+}
+
+.overview-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.summary-cards {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.card {
+  flex-basis: calc(33.333% - 10px);
+  background-color: #f9f9f9;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+
+.card-content h3 {
+  margin-top: 10px;
+  color: #333;
+}
+
+.card-content p {
+  font-size: 24px;
+  font-weight: bold;
+  color: #666;
+}
+
+/* Tooltip styles */
+.react-tooltip {
+  background: #333 !important;
+  color: #fff !important;
+  border-radius: 4px !important;
+  padding: 5px 10px !important;
+}

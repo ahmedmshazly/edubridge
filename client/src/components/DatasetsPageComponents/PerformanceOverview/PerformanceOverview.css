@@ -1,0 +1,49 @@
+/* Styles for the PerformanceOverview component */
+.performance-overview {
+    font-family: 'Lexend', sans-serif;
+}
+
+.performance-overview .tabs {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: #f2f2f2; /* Light grey background */
+    margin-bottom: 1%;
+}
+
+.performance-overview .tab-button {
+    padding: 10px 15px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: #112A40; /* Dark navy blue text */
+    font-size: 16px;
+}
+
+.performance-overview .tab-button.active {
+    border-bottom: 3px solid #227C97; /* Blue bottom border for active tab */
+    font-weight: bold;
+}
+
+.performance-overview .tab-button:hover {
+    background-color: #e8e8e8; /* Slightly darker grey on hover */
+}
+
+.performance-overview .tab-content {
+    padding: 20px;
+    background-color: #f2f2f2; /* Light grey background */
+    color: #112A40; /* Dark navy blue text */
+}
+
+@media (max-width: 768px) {
+    .performance-overview .tabs {
+        justify-content: center;
+    }
+
+    .performance-overview .tab-button {
+        flex-grow: 1;
+        text-align: center;
+    }
+}
