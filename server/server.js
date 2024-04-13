@@ -8,7 +8,15 @@ const app = express();
 
 
 // Middleware
-app.use(cors());
+app.use(cors(
+  {
+    // vercel deployment
+    origin: ["https://deploy-mern-lwhq.vercel.app"],
+    methods:  ['GET', 'POST', 'DELETE'],
+    credentials: true
+
+  }
+));
 app.use(express.json()); // Built-in body parsing middleware
 
 // Routes
