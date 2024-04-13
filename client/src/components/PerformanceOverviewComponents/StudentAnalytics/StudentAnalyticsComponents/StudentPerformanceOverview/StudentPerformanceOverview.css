@@ -1,0 +1,67 @@
+/* Main container styling */
+.student-performance-container {
+    padding: 20px;
+    background-color: #f9f9f9; /* Light background for readability */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 1000px; /* Adjust based on your layout needs */
+  }
+  
+  /* Styling for the dropdown and buttons */
+  select,
+  .button {
+    padding: 10px;
+    margin: 5px 0; /* Spacing for clarity */
+    border: 1px solid #ccc; /* Subtle border styling */
+    border-radius: 4px; /* Rounded corners for a modern look */
+    background-color: #fff; /* Clean background */
+    cursor: pointer; /* Indicates interactivity */
+  }
+  
+  /* Active button styling */
+  .button.active {
+    background-color: #82ca9d; /* Distinguish active view option */
+    color: white;
+  }
+  
+  /* Layout for view options */
+  .view-options {
+    display: flex;
+    justify-content: center; /* Center align the view options */
+    gap: 10px; /* Spacing between buttons */
+    margin: 20px 0; /* Spacing above and below the options */
+  }
+  
+  /* Chart container enhancements for better visualization */
+  .responsive-container {
+    margin-bottom: 30px; /* Spacing between each chart */
+  }
+  
+  /* Tooltip customization for clarity */
+  .recharts-tooltip-wrapper {
+    background-color: #fff !important; /* Ensure tooltip background is white for readability */
+    border-radius: 4px !important; /* Rounded corners for the tooltip */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important; /* Soft shadow for depth */
+    padding: 5px !important; /* Padding inside the tooltip */
+  }
+  
+  /* Legend styling for better distinction */
+  .recharts-legend-wrapper {
+    padding: 10px; /* Spacing around legend items */
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    border-radius: 4px; /* Rounded corners for legend */
+    bottom: -20px !important; /* Position adjustment */
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .view-options {
+      flex-direction: column; /* Stack options vertically on smaller screens */
+    }
+  
+    .button {
+      width: 100%; /* Full width buttons for easier interaction */
+    }
+  }
+  

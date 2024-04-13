@@ -1,0 +1,12 @@
+.login-page-container{
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: #f2f2f2;
+    height: 100vh;
+}
+
+@media (max-width: 768px) {
+    .login-page-container{
+        flex-direction: column;
+    }
+}

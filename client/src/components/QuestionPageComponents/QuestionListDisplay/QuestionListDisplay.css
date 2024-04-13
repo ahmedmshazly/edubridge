@@ -1,0 +1,57 @@
+.question-list {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.question-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease;
+}
+
+.question-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.question-details {
+    cursor: pointer;
+    flex-grow: 1;
+}
+
+.delete-question-btn {
+    padding: 5px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.delete-question-btn img {
+    width: 20px;
+    height: 20px;
+}
+
+.no-questions,
+.loading-questions {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .question-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .delete-question-btn {
+        align-self: center;
+        margin-top: 10px;
+    }
+}

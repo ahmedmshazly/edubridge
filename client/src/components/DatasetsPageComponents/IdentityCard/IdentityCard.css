@@ -1,0 +1,74 @@
+.identity-card-container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    justify-content: space-between;
+    border-radius: 20px;
+    background-color: #f0f0f0; /* Light grey background */
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  */
+    margin: 10px; /* Adjust as necessary */
+  }
+
+  .card-container{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    
+  }
+  
+  .user-avatar {
+    border-radius: 50%; /* Circular avatar */
+    width: 40px; /* Adjust as necessary */
+    height: 40px; /* Adjust as necessary */
+  }
+  
+  .user-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .user-name {
+    font-weight: bold;
+    color: #333; /* Dark grey color for text */
+  }
+  
+  .user-detail {
+    color: #666; /* Light grey color for text */
+    font-size: 0.85em;
+  }
+  
+  .logout-button {
+    font-family: 'Lexend', sans-serif;
+    width: 80%;
+    margin-top: 15px;
+    background-color: transparent;
+    border: none;
+    color: #333; /* Dark grey color to match the text */
+    cursor: pointer;
+    font-size: 0.85em;
+    padding: 5px 10px; /* Adjust as necessary */
+    border-radius: 10px; /* Slight rounding on button corners for styling */
+    box-shadow: none; /* No shadow for the button by default */
+  }
+  
+  .logout-button:hover {
+    background-color: #e0e0e0; /* Slightly darker background on hover */
+  }
+  
+
+  /* Responsive adjustments */
+@media (max-width: 768px) {
+    .card-container{
+        flex-direction: column;
+        align-items: center;
+  }
+  .user-info{
+    align-items: center;
+    text-align: center;
+  }
+  .logout-button {
+    width: 100%;
+  }
+  @media (max-width: 600px) {
+    
+  }}

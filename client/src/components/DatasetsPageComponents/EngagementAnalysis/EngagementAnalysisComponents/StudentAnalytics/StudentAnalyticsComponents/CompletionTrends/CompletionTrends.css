@@ -1,0 +1,62 @@
+/* Container styles */
+.completion-trends-container {
+    padding: 20px;
+    background-color: #f9f9f9; /* Light background for contrast */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 960px; /* Optimal for readability */
+  }
+  
+  /* Heading styles */
+  h2 {
+    color: #227C97; /* A color that stands out */
+    text-align: center; /* Center heading */
+    margin-bottom: 20px; /* Space between heading and filters */
+  }
+  
+  /* Filter section styles */
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center filters for a balanced look */
+    gap: 20px; /* Spacing between filters */
+    margin-bottom: 20px; /* Space before chart */
+  }
+  
+  /* Label and input/select styles for filters */
+  .filters label {
+    font-weight: bold; /* Make labels stand out */
+    margin-bottom: 5px; /* Space between label and input/select */
+  }
+  
+  .filters input,
+  .filters select {
+    display: block; /* Ensure inputs/selects take full width */
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px; /* Space between label and input/select */
+    border: 1px solid #ccc; /* Subtle border */
+    border-radius: 4px; /* Rounded corners for inputs/selects */
+    background-color: #fff; /* Ensure background contrast */
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .filters {
+      flex-direction: column; /* Stack filters vertically on smaller screens */
+    }
+    
+    .filters label {
+      width: 100%; /* Full width for better touch targets */
+    }
+  }
+  
+  /* Enhancing the Chart's Tooltip for better visibility */
+  .recharts-default-tooltip {
+    border: 1px solid #ccc !important; /* Ensure tooltip stands out */
+    background-color: #fff !important; /* Bright background for readability */
+    border-radius: 4px !important; /* Match the rounded corners theme */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1) !important; /* Soft shadow for depth */
+  }
+  

@@ -1,0 +1,26 @@
+/* EngagementAndParticipation.css */
+.chart-container {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+  }
+  
+  .recharts-responsive-container {
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .recharts-tooltip-wrapper {
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    padding: 10px;
+  }
+  
+  .recharts-legend-wrapper {
+    bottom: 0 !important; /* Adjust legend position if needed */
+  }
+  

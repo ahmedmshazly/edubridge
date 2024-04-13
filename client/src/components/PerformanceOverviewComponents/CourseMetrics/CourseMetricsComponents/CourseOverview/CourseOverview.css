@@ -1,0 +1,98 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  /* Filter Container Styles */
+  .filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    margin: 20px auto;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    max-width: 800px;
+  }
+  
+  .filter-container label,
+  .filter-container input {
+    font-size: 14px;
+  }
+  
+  .filter-container div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Course Cards Container */
+  .courses-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  /* Course Card Styles */
+  .course-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    width: calc(33.333% - 20px);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .course-card h2 {
+    color: #227C97;
+    margin: 0;
+    font-size: 20px;
+  }
+  
+  .course-card p, .course-card .card-section span {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+  
+  .card-section {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  /* Chart Container */
+  .chart {
+    margin-top: 20px;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 1200px) {
+    .course-card {
+      width: calc(50% - 20px);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .filter-container {
+      flex-direction: column;
+    }
+  
+    .course-card {
+      width: 100%;
+      max-width: 400px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .card-section {
+      flex-direction: column;
+    }
+  }
+  
