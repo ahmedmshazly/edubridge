@@ -3,6 +3,11 @@
   "name": "client",
   "private": true,
   "version": "0.0.0",
+  "eslintConfig": {
+    "rules": {
+      "react/prop-types": "off",
+      "no-unused-vars": ["warn", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }]
+    },
   "type": "module",
   "scripts": {
     "dev": "vite",
