@@ -1,3 +1,4 @@
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 // Pages
 import LoginPage from "./pages/LoginPage/LoginPage.jsx";

@@ -3,16 +3,10 @@
   "name": "client",
   "private": true,
   "version": "0.0.0",
-  "eslintConfig": {
-    "rules": {
-      "react/prop-types": "off",
-      "no-unused-vars": ["warn", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }]
-    }
-  },
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node -v && npm -v && npm clean-install && next build",
+    "build": "node -v && npm -v && npm clean-install && vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },

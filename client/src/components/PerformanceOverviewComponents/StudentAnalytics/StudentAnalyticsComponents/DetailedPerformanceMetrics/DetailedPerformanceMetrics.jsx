@@ -65,7 +65,7 @@ const DetailedPerformanceMetrics = ({ dataset }) => {
                                     onMouseEnter={(e) => {
                                         // Show tooltip
                                         const tooltip = document.createElement("div");
-                                        tooltip.innerHTML = getTooltipContent(course);
+                                        // tooltip.innerHTML = getTooltipContent(course);
                                         tooltip.className = "custom-tooltip";
                                         tooltip.style.position = "absolute";
                                         tooltip.style.top = `${e.clientY + 10}px`;

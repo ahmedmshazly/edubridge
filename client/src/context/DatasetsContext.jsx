@@ -20,7 +20,7 @@ export const datasetsReducer = (state, action) => {
                 datasets: [action.payload, ...state.datasets],
                 totalStudents: state.totalStudents + action.payload.studentCount
             };
-        case 'REMOVE_DATASET':
+        case 'REMOVE_DATASET': {
             const removedDataset = state.datasets.find(dataset => dataset._id === action.payload);
             const newTotalStudents = state.totalStudents - (removedDataset ? removedDataset.studentCount : 0);
             return {
@@ -28,6 +28,8 @@ export const datasetsReducer = (state, action) => {
                 datasets: state.datasets.filter(dataset => dataset._id !== action.payload),
                 totalStudents: newTotalStudents
             };
+        }
+
         default:
             return state;
     }
