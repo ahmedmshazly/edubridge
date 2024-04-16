@@ -1,9 +1,9 @@
 // DashboardSummary.jsx
 import React from 'react';
-import './DashboardSummary.css'; // Ensure you create this CSS file
+import './DashboardSummary.css'; 
 
 const DashboardSummary = ({ dataset }) => {
-  const { studentCompletion, overallStats, uniqueCoursesCount } = dataset.metrics[0]; // Assuming metrics is an array
+  const { studentCompletion, overallStats, uniqueCoursesCount } = dataset.metrics[0]; 
 
   return (
     <div className="dashboard-summary">

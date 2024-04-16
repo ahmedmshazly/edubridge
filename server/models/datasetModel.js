@@ -72,7 +72,7 @@ const studentDetailSchema = new mongoose.Schema({
 
 // -------------
 const StudentStatSchema = new mongoose.Schema({
-  studentId: String, // Assuming unique identifier for a student
+  studentId: String,
   assignmentsCompleted: { type: Number, default: 0 },
   totalScore: Number,
   count: Number,
@@ -91,7 +91,7 @@ const StudentStatSchema = new mongoose.Schema({
 });
 
 const CourseStatSchema = new mongoose.Schema({
-  courseId: String, // Assuming unique identifier for a course
+  courseId: String,
   studentsEnrolled: { type: Number, default: 0 },
   totalScore: Number,
   count: Number,
@@ -110,7 +110,7 @@ const CourseStatSchema = new mongoose.Schema({
 });
 
 const AssignmentStatSchema = new mongoose.Schema({
-  assignmentId: Number, // Assuming unique identifier for an assignment
+  assignmentId: Number,
   scores: [Number],
   studentsCompleted: { type: Number, default: 0 },
   count: Number,
@@ -175,7 +175,7 @@ const TermEngagementSchema = new mongoose.Schema({
   coursesCount: Number,
   averageFinalScore: Number,
   averagePercentageScore: Number,
-  studentsCount: Number, // Assuming you convert the Set size to a count
+  studentsCount: Number,
 }, { _id: false });
 
 const StudentEngagementSchema = new mongoose.Schema({
@@ -316,10 +316,10 @@ const MetricsSchema = new mongoose.Schema({
 
   engagementAndParticipation: {
     overallEngagement: EngagementSchema,
-    courseEngagement: [CourseEngagementSchema], // Assuming multiple courses
-    termEngagement: [TermEngagementSchema], // Assuming multiple terms
-    studentEngagement: [StudentEngagementSchema], // Assuming multiple students
-    scoreInsights: [ScoreInsightSchema], // Assuming insights for multiple courses
+    courseEngagement: [CourseEngagementSchema],
+    termEngagement: [TermEngagementSchema], 
+    studentEngagement: [StudentEngagementSchema], 
+    scoreInsights: [ScoreInsightSchema], 
     engagementInsights: EngagementInsightsSchema
   },
 

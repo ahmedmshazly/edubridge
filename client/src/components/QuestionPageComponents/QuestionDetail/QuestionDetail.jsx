@@ -1,24 +1,31 @@
-import React from 'react';
-import './QuestionDetail'
+import React, { useState, useEffect } from 'react';
+import './QuestionDetail.css';
+
 const QuestionDetail = ({ question }) => {
-    if (!question) {
-        return <p>Select a question to view details.</p>;
-    }
+    const [q, setQuestion] = useState(question);
+
+    useEffect(() => {
+        setQuestion(question); // Update the local state whenever the 'question' prop changes
+    }, [question]);
+
+    if (!q) return <p>Select a question to view details.</p>;
+    if (!q.questionText) return <p>No question found.</p>;
 
     return (
         <div className="question-detail">
             <h2>Question Details</h2>
-            <h3>{question.questionText}</h3>
+            <h3>{q.questionText}</h3>
             <div>
                 <strong>Categories:</strong>
                 <ul>
-                    {question.categories.map((cat, index) => (
+                    {q.categories.map((cat, index) => (
                         <li key={index}>{cat.categoryName} (Applicable: {cat.applicable ? 'Yes' : 'No'})</li>
                     ))}
                 </ul>
             </div>
-            <p><strong>Created By:</strong> {question.createdBy}</p> {/* Assuming 'createdBy' might be just an ID or a name */}
-            <p><strong>Created At:</strong> {new Date(question.createdAt).toLocaleDateString()}</p>
+            <p><strong>Created By:</strong> {q.createdBy}</p>
+            <p><strong>Answer:</strong> {q.answer}</p>
+            <p><strong>Created At:</strong> {new Date(q.createdAt).toLocaleDateString()}</p>
         </div>
     );
 };

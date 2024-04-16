@@ -8,7 +8,6 @@ import AdvancedAnalytics from './EngagementAnalysisComponents/AdvancedAnalytics/
 import AssignmentAnalytics from './EngagementAnalysisComponents/AssignmentAnalytics/AssignmentAnalytics';
 
 const EngagementAnalysis = ({ dataset }) => {
-  // State to hold the currently active tab
   const [activeTab, setActiveTab] = useState('overview');
 
   return (

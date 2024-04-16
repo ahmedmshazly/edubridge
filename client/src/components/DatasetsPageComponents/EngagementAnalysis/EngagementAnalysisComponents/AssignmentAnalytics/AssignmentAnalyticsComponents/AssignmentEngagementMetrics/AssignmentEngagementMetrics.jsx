@@ -12,7 +12,6 @@ import {
   LineElement,
 } from 'chart.js';
 
-// Register Chart.js components
 ChartJS.register(
   Tooltip, Legend, ArcElement, Title, 
   CategoryScale, LinearScale, PointElement, LineElement
@@ -24,17 +23,14 @@ const AssignmentEngagementMetrics = ({ dataset }) => {
     const [summaryData, setSummaryData] = useState({ totalSubmissions: 0, averageLateDays: 0 });
 
     useEffect(() => {
-        // Assume dataset structure and extract assignments accordingly
         if (dataset && dataset.metrics && dataset.metrics[0].overallStats.assignmentsStatistics) {
             setAssignments(dataset.metrics[0].overallStats.assignmentsStatistics.assignments);
         }
     }, [dataset]);
 
     useEffect(() => {
-        // Simulate calculating summary data for the selected assignment
         if (selectedAssignmentId) {
             const assignment = assignments.find(assignment => assignment.assignmentId === selectedAssignmentId);
-            // Simulated calculation of total submissions and average late days
             const totalSubmissions = assignment?.onTimeCount + assignment?.lateCount;
             const averageLateDays = Math.random() * 5; // Dummy calculation
 
@@ -67,8 +63,7 @@ const AssignmentEngagementMetrics = ({ dataset }) => {
         }],
     };
 
-    // Add a Line chart dataset for visualizing submission trends over time
-    // Placeholder data; you'd replace this with actual date-based data for the selected assignment
+
     const lineData = {
         labels: ["Week 1", "Week 2", "Week 3", "Week 4"],
         datasets: [

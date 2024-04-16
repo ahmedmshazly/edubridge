@@ -24,7 +24,6 @@ const AssignmentScoreDistribution = ({ dataset }) => {
     const [selectedAssignmentId, setSelectedAssignmentId] = useState('');
     // console.log(assignments)
 
-    // Assuming dataset is structured appropriately
     useEffect(() => {
         // Only set assignments once the component has mounted or when dataset changes
         if (dataset && dataset.metrics && dataset.metrics[0].overallStats.assignmentsStatistics) {

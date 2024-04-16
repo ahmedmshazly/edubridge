@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import './TermPerformanceComparison.css'; // Ensure this file exists and is correctly imported
+import './TermPerformanceComparison.css'; 
 
 const TermPerformanceComparison = ({ dataset }) => {
     const { courseMetrics, termStatistics } = dataset.metrics[0].overallStats;

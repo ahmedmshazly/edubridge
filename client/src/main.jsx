@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import App from './App.jsx';
 import { DatasetsContextProvider } from './context/DatasetsContext.jsx';
 import { AuthContextProvider } from './context/AuthContext.jsx';
-import { QuestionsContextProvider } from './context/QuestionsContext.jsx'; // Make sure the path matches
+import { QuestionsContextProvider } from './context/QuestionsContext.jsx'; 
 import './index.css';
 
 // Create a root.

@@ -2,7 +2,6 @@ import csv
 import re
 import random
 
-# Define your categories here
 categories = ["General Information", "Structure & Content", "Results"]
 
 # Function to generate random category inputs

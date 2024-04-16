@@ -5,7 +5,6 @@ import { useDatasetsContext } from "../../../hooks/useDatasetsContext";
 const SideBarNumbers = () => {
   const { datasets, totalStudents } = useDatasetsContext();
   
-  // Function to sum numbers for unique courses
   const sumUniqueCourses = (datasets) => {
     return datasets.reduce((total, dataset) => {
       const uniqueCoursesCount = dataset.metrics?.[0]?.overallStats?.uniqueCoursesCount?.total || 0;
@@ -13,20 +12,17 @@ const SideBarNumbers = () => {
     }, 0);
   };
 
-  // Function to count unique assignments across all datasets
   const countUniqueAssignments = (datasets) => {
-    const uniqueAssignments = new Set(); // Use a Set to store unique IDs
+    const uniqueAssignments = new Set(); 
     datasets.forEach(dataset => {
       const assignments = dataset.metrics?.[0]?.overallStats?.assignmentsStatistics?.assignments || [];
       assignments.forEach(assignment => {
-        // Assuming the assignment object looks like { Id: "content" }
         if (assignment.assignmentId) uniqueAssignments.add(assignment.assignmentId); // Add the ID to the Set
       });
     });
-    return uniqueAssignments.size; // The size of the Set represents the count of unique IDs
+    return uniqueAssignments.size; 
   };
 
-  // Use functions to calculate totals
   const totalUniqueCourses = sumUniqueCourses(datasets);
   const totalUniqueAssignments = countUniqueAssignments(datasets);
 

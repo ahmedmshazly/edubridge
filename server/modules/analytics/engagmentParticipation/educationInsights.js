@@ -95,7 +95,7 @@ function aggregateCourseEngagement(courseEngagement, course) {
     }
 
     if (course.final_score !== undefined && course.final_score !== null) {
-        const percentageScore = (course.final_score / 100) * 100; // Assuming a max score of 100
+        const percentageScore = (course.final_score / 100) * 100; 
         courseEngagement[courseId].percentageScores.push(percentageScore);
     }
 
@@ -109,14 +109,14 @@ function calculateCourseAverages(courseEngagement) {
     Object.values(courseEngagement).forEach(course => {
         if (course.scores.length > 0) {
             course.averageFinalScore = course.scores.reduce((a, b) => a + b, 0) / course.scores.length;
-            // Ensure there are percentage scores before calculating the average
+           
             if (course.percentageScores.length > 0) {
                 course.averagePercentageScore = course.percentageScores.reduce((a, b) => a + b, 0) / course.percentageScores.length;
             } else {
                 course.averagePercentageScore = 0; // or another default value as appropriate
             }
         } else {
-            course.averageFinalScore = 0; // Ensure this is set to a default as well
+            course.averageFinalScore = 0; 
             course.averagePercentageScore = 0;
         }
         course.terms = Array.from(course.terms);
@@ -125,13 +125,13 @@ function calculateCourseAverages(courseEngagement) {
 
 
 function aggregateTermEngagement(termEngagement, course) {
-    // Ensure the course has term information before proceeding
+   
     if (!course.term || !course.term.id) {
         console.warn('Course missing term information, skipping...');
         return;
     }
 
-    const termId = course.term.id.toString(); // Ensure termId is a string for consistency in object keys
+    const termId = course.term.id.toString(); 
 
     // Initialize term engagement object if it doesn't exist
     if (!termEngagement[termId]) {
@@ -162,7 +162,7 @@ function aggregateTermEngagement(termEngagement, course) {
     }
 
     if (course.final_score !== undefined && course.final_score !== null) {
-        const percentageScore = (course.final_score / 100) * 100; // Assuming a max score of 100
+        const percentageScore = (course.final_score / 100) * 100; 
         termEngagement[termId].percentageScores.push(percentageScore);
     }
 
@@ -191,7 +191,7 @@ function finalizeTermEngagement(termEngagement) {
 }
 
 function aggregateStudentEngagement(studentEngagement, studentId, course) {
-    // Ensure the studentId is treated as a string for consistency in object keys
+   
     studentId = studentId.toString();
 
     // Initialize student engagement object if it doesn't exist
@@ -231,7 +231,7 @@ function aggregateStudentEngagement(studentEngagement, studentId, course) {
     }
 
     if (course.final_score !== undefined && course.final_score !== null) {
-        const percentageScore = (course.final_score / 100) * 100; // Assuming a max score of 100
+        const percentageScore = (course.final_score / 100) * 100;
         studentEngagement[studentId].percentageScores.push(percentageScore);
     }
 
@@ -246,7 +246,7 @@ function finalizeStudentEngagement(studentEngagement) {
         // Calculate average final score for the student
         if (student.scores.length > 0) {
             student.averageFinalScore = student.scores.reduce((a, b) => a + b, 0) / student.scores.length;
-            // Ensure there are percentage scores before calculating the average
+            
             if (student.percentageScores && student.percentageScores.length > 0) {
                 student.averagePercentageScore = student.percentageScores.reduce((a, b) => a + b, 0) / student.percentageScores.length;
             } else {
@@ -261,14 +261,14 @@ function finalizeStudentEngagement(studentEngagement) {
         if (student.terms instanceof Set) {
             student.terms = Array.from(student.terms);
         } else {
-            // Ensure terms is always an array, even if it's initially not a Set
+        
             student.terms = Array.isArray(student.terms) ? student.terms : [];
         }
     });
 }
 
 function aggregateScoreInsights(scoreInsights, course) {
-    const courseId = course.course_id.toString(); // Ensure courseId is a string for consistency
+    const courseId = course.course_id.toString();
 
     // Initialize score insights for the course if it doesn't exist
     if (!scoreInsights[courseId]) {

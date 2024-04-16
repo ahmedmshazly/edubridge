@@ -9,7 +9,6 @@ const DetailedPerformanceMetrics = ({ dataset }) => {
 
     const selectedStudent = useMemo(() => studentDetails.find(student => student.studentId === selectedStudentId), [studentDetails, selectedStudentId]);
 
-    // Use the same filter for the chart data as for the table to ensure consistency
     const filteredChartData = useMemo(() => selectedStudent?.coursesDetailsPerStudent.filter(course => course.courseId.includes(searchTerm) || course.termId.toString().includes(searchTerm)).map(course => ({
         name: `Course ${course.courseId} (Term ${course.termId})`,
         FinalScore: course.finalScore,

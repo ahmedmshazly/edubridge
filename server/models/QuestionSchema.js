@@ -25,7 +25,7 @@ const QuestionSchema = new mongoose.Schema({
     },
     dataset: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Dataset', // Assuming 'Dataset' is the name of your dataset model
+        ref: 'Dataset', 
         required: true
     },
     createdAt: {

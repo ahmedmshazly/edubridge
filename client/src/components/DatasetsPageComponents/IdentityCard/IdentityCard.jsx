@@ -2,7 +2,7 @@ import React from 'react';
 import './IdentityCard.css';
 import { useLogout } from "../../../hooks/useLogout";
 import { useNavigate } from 'react-router-dom';
-import userAvatar from '../../../assets/images/avatar.svg'; // Adjust the path to your actual user avatar image
+import userAvatar from '../../../assets/images/avatar.svg'; 
 
 const IdentityCard = () => {
 

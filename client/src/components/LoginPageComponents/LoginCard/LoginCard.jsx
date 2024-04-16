@@ -12,13 +12,9 @@ import GuestButton from '../../common/GuestButton/GuestButton.jsx';
 import './LoginCard.css';
 
 // Images
-import LogoImage from '../../../assets/images/logo.png'; // Ensure correct paths
+import LogoImage from '../../../assets/images/logo.png'; 
 
-/**
- * LoginCard presents a card layout for the login process, including
- * language selection, a logo, a welcome message, options for authentication,
- * and a form for login credentials.
- */
+
 const LoginCard = () => {
     return (
         <div className="login-card">

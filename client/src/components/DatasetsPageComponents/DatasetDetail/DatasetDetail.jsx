@@ -16,13 +16,9 @@ const DatasetDetail = ({ dataset }) => {
             case 'engagementAnalysis':
                 return <EngagementAnalysis dataset={dataset} />; 
 
-            // case 'predictiveAnalytics':
-            //     return <PerformanceOverview dataset={dataset} />;
-
             case 'structureNotes':
                 return <ValidationNotesComponent validationNotes={dataset.validationNotes} />; 
                     
-            // Future case for 'engagementAnalytics'
             default:
                 return <div>No view selected</div>;
         }

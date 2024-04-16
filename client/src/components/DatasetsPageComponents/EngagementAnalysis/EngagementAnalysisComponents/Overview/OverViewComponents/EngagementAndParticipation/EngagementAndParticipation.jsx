@@ -1,7 +1,7 @@
 // EngagementAndParticipation.jsx
 import React from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import './EngagementAndParticipation.css'; // Make sure to create this CSS file
+import './EngagementAndParticipation.css'; 
 
 // Mock data for the chart
 const data = [

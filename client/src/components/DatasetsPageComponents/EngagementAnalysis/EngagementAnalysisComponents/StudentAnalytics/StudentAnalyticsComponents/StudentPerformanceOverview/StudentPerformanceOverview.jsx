@@ -5,16 +5,13 @@ import './StudentPerformanceOverview.css';
 const StudentPerformanceOverview = ({ dataset }) => {
     const studentDetails = dataset.metrics[0].overallStats.studentDetails;
     const [selectedStudentId, setSelectedStudentId] = useState('');
-    const [viewOption, setViewOption] = useState('all'); // Options: all, completed, notCompleted
+    const [viewOption, setViewOption] = useState('all'); 
 
-    // Find the selected student based on selectedStudentId
     const selectedStudent = studentDetails.find(student => student.studentId === selectedStudentId);
 
-    // Generate data for the view based on the selected student and view option
     const { finalScores, reqCounts, barData } = selectedStudent ? prepareDataForView(selectedStudent, viewOption) : { finalScores: [], reqCounts: [], barData: [] };
 
     function prepareDataForView(student, viewOption) {
-        // Adjust this function based on your actual data structure
         const finalScores = [
             {
                 name: 'Avg Final Score',

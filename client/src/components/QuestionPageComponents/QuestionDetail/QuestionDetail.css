@@ -1,68 +1,82 @@
-/* Styles for the QuestionDetail component */
+/* Base styles for the QuestionDetail component */
 .question-detail {
     font-family: 'Lexend', sans-serif;
     padding: 20px;
-    background-color: #f2f2f2; /* Light grey background for consistency */
-    color: #112A40; /* Dark navy blue text for better readability */
-    border-radius: 8px; /* Rounded corners for a smoother look */
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    background-color: #ffffff; /* Switched to a clean white background */
+    color: #112A40;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* More pronounced shadow for depth */
+    border: 1px solid #e2e2e2; /* Subtle border for refined look */
+    transition: transform 0.3s ease-in-out; /* Smooth transformation on hover */
 }
 
+.question-detail:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover for interactivity */
+    background: linear-gradient(145deg, #e6f0ff, #ffffff); /* Subtle gradient for a fresh feel */
+}
+
+/* Headings styling with creative touch */
 .question-detail h2, .question-detail h3 {
-    color: #227C97; /* Blue color for headings, attracting attention */
+    color: #227C97; /* Consistent theme color */
     margin-top: 0;
     padding-bottom: 10px;
-    border-bottom: 2px solid #e2e2e2; /* Light border under the title for separation */
+    border-bottom: 2px dashed #e2e2e2; /* Dashed line for a creative separation */
 }
 
 .question-detail h2 {
-    font-size: 24px; /* Larger font size for main heading */
+    font-size: 24px; /* Prominent heading size */
+    text-shadow: 1px 1px 2px #bbbbbb; /* Text shadow for depth */
 }
 
 .question-detail h3 {
-    font-size: 18px; /* Smaller than h2, but still prominent */
+    font-size: 18px; /* Clear and legible subheading size */
 }
 
+/* Strong emphasis with a pop of color */
 .question-detail strong {
-    color: #112A40; /* Consistent dark navy blue for emphasis */
+    color: #d64545; /* Bright color for emphasis */
+    font-weight: bold;
 }
 
+/* List enhancements for better visual structure */
 .question-detail ul {
-    list-style-type: none; /* Clean list without bullets */
+    list-style-type: none;
     padding: 0;
     margin: 10px 0;
 }
 
 .question-detail li {
-    padding: 5px 0; /* Space between list items for clarity */
-    transition: background-color 0.2s ease-in-out; /* Smooth transition for hover */
+    padding: 5px 10px; /* Increased padding for better touch */
+    margin: 5px 0;
+    border-left: 5px solid #227C97; /* Solid line for visual lead-in */
+    transition: all 0.3s ease-in-out; /* Transition for hover effects */
+    background-color: #f9f9f9; /* Slightly off-white background for list items */
 }
 
 .question-detail li:hover {
-    background-color: #e0e0e0; /* Highlight item on hover for better interactivity */
+    background-color: #e0f7fa; /* Light blue on hover for a refreshing feel */
+    border-left: 5px solid #34a4eb; /* Brighter blue on hover */
+    cursor: pointer; /* Indicates interactiveness */
 }
 
+/* Paragraph adjustments for clarity and legibility */
 .question-detail p {
     margin: 10px 0;
-    line-height: 1.6; /* Improved line spacing for readability */
+    line-height: 1.6; /* Improved readability through line spacing */
+    color: #333; /* Darker text for better readability */
 }
 
+/* Responsive handling for different screen sizes */
 @media (max-width: 768px) {
     .question-detail {
         padding: 10px;
-    }
-    .question-detail h2 {
-        font-size: 20px; /* Slightly smaller on mobile for space efficiency */
-    }
-    .question-detail h3 {
-        font-size: 16px;
+        font-size: 18px; /* Adjusted text size for smaller screens */
     }
 }
 
-/* Additional responsive handling */
 @media (max-width: 480px) {
     .question-detail {
-        padding: 10px; /* Less padding on very small screens */
-        font-size: 14px; /* Smaller font size for space constraints */
+        padding: 10px;
+        font-size: 16px; /* Further reduced font size for mobile screens */
     }
 }

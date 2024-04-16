@@ -1,7 +1,7 @@
 import React from "react";
 import { useLogout } from "../../hooks/useLogout.jsx";
 import { useNavigate } from 'react-router-dom';
-import './DatasetsPage.css'; // Ensure the path matches your file structure
+import './DatasetsPage.css'; 
 import LeftSidebar from "../../components/DatasetsPageComponents/LeftSidebar/LeftSidebar.jsx";
 import DatasetsList from "../../components/DatasetsPageComponents/DatasetsContainer/DatasetsContainer.jsx";
 

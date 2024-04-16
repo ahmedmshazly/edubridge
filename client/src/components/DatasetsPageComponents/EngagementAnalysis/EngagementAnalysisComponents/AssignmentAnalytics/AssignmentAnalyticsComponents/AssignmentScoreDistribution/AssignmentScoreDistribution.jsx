@@ -10,7 +10,6 @@ import {
   Legend,
 } from 'chart.js';
 
-// Register Chart.js components
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -22,20 +21,15 @@ ChartJS.register(
 const AssignmentScoreDistribution = ({ dataset }) => {
     const [assignments, setAssignments] = useState([]);
     const [selectedAssignmentId, setSelectedAssignmentId] = useState('');
-    // console.log(assignments)
 
-    // Assuming dataset is structured appropriately
     useEffect(() => {
-        // Only set assignments once the component has mounted or when dataset changes
         if (dataset && dataset.metrics && dataset.metrics[0].overallStats.assignmentsStatistics) {
             setAssignments(dataset.metrics[0].overallStats.assignmentsStatistics.assignments);
         }
-    }, [dataset]); // Add dataset as a dependency to this effect
+    }, [dataset]); 
 
-    // Find the selected assignment based on selectedAssignmentId
     const selectedAssignment = assignments.find(a => a.assignmentId === selectedAssignmentId);
 
-    // Prepare chart data for the selected assignment
     const chartData = {
         labels: selectedAssignment?.scores.map((_, index) => `Student ${index + 1}`) || [],
         datasets: [

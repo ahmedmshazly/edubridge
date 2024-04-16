@@ -1,4 +1,3 @@
-/* Base styles for navItems */
 .navItems {
   display: flex;
   flex-direction: column;
@@ -8,7 +7,6 @@
   margin-bottom: auto;
 }
 
-/* Base styles for navButton */
 .navButton {
   display: flex;
   align-items: center;
@@ -27,10 +25,8 @@
   padding-right: 15px;
   margin-top: 8px;
   justify-content: flex-start;
-  /* Align content to the start */
 }
 
-/* Base styles for icons */
 .navButton .icon {
   filter: grayscale(100%);
   margin-right: 10px;
@@ -40,33 +36,23 @@
   /* Smooth transition for transform */
 }
 
-/* Hover and focus styles */
 .navButton:hover,
 .navButton:focus {
   background-color: #ddd;
-  /* Light grey background on hover/focus */
   outline: none;
-  /* Remove outline on focus for a cleaner look */
 }
 
-/* Active button styles */
 .navButton.active {
   background-color: #ddd;
-  /* Different background color for active (current) route */
 }
 
 
-/* Further adjustments for very small devices */
 @media (max-width: 768px) {
 
-  /* Hide text for smaller screens */
   .navButton {
     justify-content: center;
-    /* Center the icons when text is hidden */
     padding-left: 0;
-    /* Remove padding when text is not present */
     padding-right: 0;
-    /* Remove padding when text is not present */
     flex-direction: column;
     font-size: 12px;
 
@@ -77,7 +63,6 @@
   }
 
 
-  /* Increase icon size for better touchability */
   .navButton .icon {
     margin: 0;
     height: auto;
@@ -90,7 +75,6 @@
   }
 }
 
-/* Optional: adjustments for landscape phones or very small tablets */
 @media (max-width: 480px) {
   .navButton {
     font-size: 10px;

@@ -67,7 +67,7 @@ export const QuestionsContextProvider = ({ children }) => {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${user.token}` // Adjust as needed
+                    'Authorization': `Bearer ${user.token}` 
                 },
                 body: JSON.stringify(question)
             });
@@ -94,7 +94,7 @@ export const QuestionsContextProvider = ({ children }) => {
             const response = await fetch(`/api/questions/${questionId}`, {
                 method: 'DELETE',
                 headers: {
-                    'Authorization': `Bearer ${user.token}` // Adjust as needed
+                    'Authorization': `Bearer ${user.token}` 
                 }
             });
             if (response.ok) {

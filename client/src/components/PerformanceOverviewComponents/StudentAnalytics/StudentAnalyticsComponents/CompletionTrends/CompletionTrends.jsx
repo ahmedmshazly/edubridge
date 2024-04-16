@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { Form } from 'react-bootstrap';
-import './CompletionTrends.css'; // Make sure to create and style this CSS file for a professional look
+import './CompletionTrends.css'; 
 
 const aggregateCompletionData = (studentDetails, filters) => {
     const { minScore, maxScore, minReqCount, isModular, hasError } = filters;
@@ -73,7 +73,7 @@ const CompletionTrends = ({ dataset }) => {
                 parsedValue = undefined; // Handle 'All' option
             }
         } else if (type !== 'checkbox') {
-            parsedValue = Number(value); // Ensure numerical values for minScore, maxScore, and minReqCount
+            parsedValue = Number(value); 
         } else {
             parsedValue = checked; // For checkboxes
         }

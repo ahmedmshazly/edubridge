@@ -101,7 +101,7 @@ const QuestionAddForm = ({ setShowListView, setIsLoading, isLoading }) => {
                 const response = await fetch(`/api/datasets/names`, {
                     method: 'GET',
                     headers: {
-                        'Authorization': `Bearer ${user.token}` // Adjust as needed
+                        'Authorization': `Bearer ${user.token}` 
                     }
                 });
                 const data = await response.json();

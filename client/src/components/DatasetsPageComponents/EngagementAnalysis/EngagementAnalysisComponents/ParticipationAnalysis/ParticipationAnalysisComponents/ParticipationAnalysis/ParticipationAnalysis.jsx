@@ -5,10 +5,7 @@ import 'ParticipationAnalysis.css'
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
 const ParticipationAnalysis = ({ participationData }) => {
-  // Assuming participationData is an array of participation objects
 
-  // Calculate participation over time
-  // This will need to be adjusted based on your actual data structure and needs
   const participationOverTime = participationData.reduce((acc, { date, interactionType }) => {
     const dateString = new Date(date).toISOString().split('T')[0]; // Normalize date to YYYY-MM-DD
     if (!acc[dateString]) acc[dateString] = { date: dateString, count: 0 };
@@ -50,7 +47,7 @@ const ParticipationAnalysis = ({ participationData }) => {
           </PieChart>
         </ResponsiveContainer>
       </div>
-      {/* Individual Student Participation (This could be a detailed table or another type of component based on your data structure and UI design) */}
+      {}
     </div>
   );
 };

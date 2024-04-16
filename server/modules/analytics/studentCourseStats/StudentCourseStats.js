@@ -126,7 +126,6 @@ function initializeCourseOrStudentStatObject() {
 }
 
 function updateStats(stat, assignment, studentKey) {
-  // Ensure all necessary properties are initialized in the stat object
   if (!stat.scores) stat.scores = [];
   if (!stat.scorePercentages) stat.scorePercentages = [];
   if (!stat.students) stat.students = new Set();
@@ -514,11 +513,10 @@ const StudentCourseStats = (data) => {
 
       }
 
-      // Assuming course.assignments is an array
       if (Array.isArray(course.assignments)) {
         course.assignments.forEach((assignment) => {
           let tempAss = processAssignment(assignment, studentId, courseId);
-          assignments.push(tempAss); // Make sure to pass all required parameters
+          assignments.push(tempAss); 
           // console.losg(tempAss)
         });
       } else {

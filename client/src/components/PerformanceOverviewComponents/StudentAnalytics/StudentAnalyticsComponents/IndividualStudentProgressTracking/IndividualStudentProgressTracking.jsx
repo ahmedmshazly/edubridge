@@ -23,7 +23,7 @@ const IndividualStudentProgressTracking = ({ dataset }) => {
             const studentData = students.find(student => student.studentId === selectedStudentId);
 
             if (studentData) {
-                const labels = Object.keys(studentData.scorePercentages); // Assuming all metrics have the same assignments
+                const labels = Object.keys(studentData.scorePercentages); 
 
                 const datasets = selectedMetrics.map(metric => {
                     const data = Object.values(studentData[metric]);

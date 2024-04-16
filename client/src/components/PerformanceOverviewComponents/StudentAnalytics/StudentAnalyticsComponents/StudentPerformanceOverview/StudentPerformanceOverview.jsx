@@ -14,7 +14,6 @@ const StudentPerformanceOverview = ({ dataset }) => {
     const { finalScores, reqCounts, barData } = selectedStudent ? prepareDataForView(selectedStudent, viewOption) : { finalScores: [], reqCounts: [], barData: [] };
 
     function prepareDataForView(student, viewOption) {
-        // Adjust this function based on your actual data structure
         const finalScores = [
             {
                 name: 'Avg Final Score',

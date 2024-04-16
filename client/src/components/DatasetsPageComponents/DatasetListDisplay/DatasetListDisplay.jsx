@@ -1,21 +1,17 @@
 import React from 'react';
-import deleteIcon from '../../../assets/images/logo.png'; // Ensure the path is correct
-import './DatasetListDisplay.css'; // Make sure the CSS is appropriately styled
+import deleteIcon from '../../../assets/images/logo.png';  
+import './DatasetListDisplay.css';
 
 const DatasetListDisplay = ({ filteredDatasets, deleteDataset,  handleCardClick, isLoading}) => {
-    // Initialize navigate function
 
-    // Handling the loading state
     if (isLoading) {
         return <div className="loading-datasets">Loading datasets...</div>;
     }
     
-    // Handling the case when there are no datasets to display after loading is complete
     else if (filteredDatasets.length === 0) {
         return <div className="no-datasets">No datasets to display.</div>;
     }
 
-    // Function to handle deletion with confirmation
     const handleDelete = (datasetId) => {
         const isConfirmed = window.confirm("Are you sure you want to delete this dataset?");
         if (isConfirmed) {

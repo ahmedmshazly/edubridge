@@ -12,11 +12,9 @@ const TopNavbar = () => {
     const location = useLocation();
     const navigate = useNavigate();
 
-    // Define nav items
     const navItems = [
         { path: '/', icon: homeIcon, text: 'Dashboard' },
         { path: '/reports', icon: databaseIcon, text: 'Reports' },
-        { path: '/settings', icon: servicesIcon, text: 'Settings' },
     ];
 
     const isActive = (path) => location.pathname === path;
@@ -38,7 +36,7 @@ const TopNavbar = () => {
                     </div>
                 ))}
             </div>
-            <div className="logout-container" onClick={() => {/* handle logout logic here */}}>
+            <div className="logout-container" onClick={() => {}}>
                 <span>Logout</span>
             </div>
         </nav>

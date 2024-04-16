@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, BarChart, Bar } from 'recharts';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
-import './CourseStudentCorrelationAnalysis.css'; // Ensure this CSS file exists and is styled
+import './CourseStudentCorrelationAnalysis.css';
 
 const CourseStudentCorrelationAnalysis = ({ dataset }) => {
     const [selectedCourse, setSelectedCourse] = useState('');
@@ -17,23 +17,20 @@ const CourseStudentCorrelationAnalysis = ({ dataset }) => {
             const processedScatterData = [];
             const processedBarData = [];
 
-            // Example processing logic
             const selectedCourseDetails = dataset.metrics[0].overallStats.courseMetrics.find(course => course.courseId === selectedCourse);
 
             if (selectedCourseDetails) {
-                // Assuming we can determine "before" and "after" based on some logic
                 const averageFinalScore = selectedCourseDetails.averageFinalScore;
                 const averageRequirementCount = selectedCourseDetails.averageRequirementCount;
 
-                // Just a simple example to populate the charts
                 processedScatterData.push({
-                    averageBefore: averageFinalScore * 0.95, // Example modification
+                    averageBefore: averageFinalScore * 0.95, 
                     averageAfter: averageFinalScore,
                 });
 
                 processedBarData.push({
                     name: "Completion Rate",
-                    completionRateBefore: averageRequirementCount * 0.9, // Example modification
+                    completionRateBefore: averageRequirementCount * 0.9, 
                     completionRateAfter: averageRequirementCount,
                 });
             }
@@ -41,7 +38,6 @@ const CourseStudentCorrelationAnalysis = ({ dataset }) => {
             setScatterData(processedScatterData);
             setBarData(processedBarData);
         } else {
-            // Reset data when no course is selected
             setScatterData([]);
             setBarData([]);
         }

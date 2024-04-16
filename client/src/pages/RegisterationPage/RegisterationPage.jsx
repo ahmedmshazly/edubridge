@@ -1,5 +1,5 @@
 import React from 'react';
-import './RegisterationPage.css'; // Ensure the path matches your file structure
+import './RegisterationPage.css'; 
 // images
 // import Backgroundimage from '../../assets/images/regestration_background.jpg';
 // components and pages

@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       // Proxy API endpoints to the backend server
-      '/api': 'https://api-beta-jet.vercel.app',
+      '/api': "http://localhost:4000",
     },
   },
 });

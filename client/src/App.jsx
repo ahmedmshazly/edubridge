@@ -2,9 +2,9 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 // Pages
 import LoginPage from "./pages/LoginPage/LoginPage.jsx";
-import RegistrationPage from "./pages/RegisterationPage/RegisterationPage.jsx"; // Corrected typo
-import Home from './pages/Home.jsx'; // Ensure consistency in naming and file structure
-import Other from './pages/Other.jsx'; // Ensure consistency in naming and file structure
+import RegistrationPage from "./pages/RegisterationPage/RegisterationPage.jsx"; 
+import Home from './pages/Home.jsx'; 
+import Other from './pages/Other.jsx'; 
 import DatasetsPage from './pages/DatasetsPage/DatasetsPage.jsx';
 import QuestionPage from './pages/QuestionsPage/QuestionsPage.jsx';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage.jsx';

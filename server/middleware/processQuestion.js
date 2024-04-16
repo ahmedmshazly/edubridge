@@ -1,77 +1,69 @@
 const { DataFrame } = require('dataframe-js');
-const Dataset = require('../models/datasetModel'); // Ensure this path is correct
-const DataCategorization = require('../models/dataCategorizationModel'); // Update with actual path
+const Dataset = require('../models/datasetModel'); 
+const DataCategorization = require('../models/dataCategorizationModel'); 
 
 /**
  * Middleware to process the question by extracting and logging data based on category paths.
  */
 async function processQuestion(req, res, next) {
     try {
-        console.log("Starting to process question.");
         const categoryNames = req.body.categories.map(cat => cat.categoryName);
-        console.log("Extracted category names:", categoryNames);
 
         const matchingDataPoints = await DataCategorization.find({
             'categories.categoryName': { $in: categoryNames }
         }).exec();
-        console.log("Matching data points found:", matchingDataPoints);
 
         const paths = matchingDataPoints.map(dp => dp.reference.path);
-        console.log("Paths extracted for data fetching:", paths);
 
-        const datasets = await fetchDataByPaths(req.body.dataset, paths);
-        console.log("Datasets fetched based on paths:", datasets);
+        const studentDetails = await fetchDataByPaths(req.body.dataset, paths);
 
-        if (datasets.length > 0) {
-            let dataframe = new DataFrame(datasets, ['path', 'data']);
-            console.log("DataFrame created. Displaying data:");
-            console.log(dataframe.show());
+        const refactoredDetails = consolidateStudentDetails(studentDetails);
+        
+        const studentDataFrame = createDataFrameFromDetails(refactoredDetails);
 
-            req.dataframe = dataframe;
-        }
+        req.body.dataframe = studentDataFrame; 
+        // console.log("studentDataFrame", studentDataFrame)
+        // console.log("req.body.dataframe", req.body.dataframe)
 
-        next(); // Proceed to next middleware or controller
+        next();
     } catch (error) {
         console.error('Error in processQuestion:', error);
         res.status(500).json({ message: 'Error processing question', error: error.message });
     }
 }
 
-function getValueByPath(obj, path) {
-    const parts = path.split('.');
-    let current = obj;
 
-    for (let i = 0; i < parts.length; i++) {
-        const part = parts[i];
-        if (current === undefined) {
-            console.log(`Undefined value at part '${part}' of the path '${path}' at index ${i}`);
-            return undefined;
+const consolidateStudentDetails = (details) => {
+    const studentMap = {};
+
+    details.forEach(detail => {
+        // Extract the index from the path
+        const match = detail.path.match(/studentDetails\[(\d+)\]/);
+        if (match) {
+            const index = match[1];
+            const propertyPath = detail.path.split('.').pop();
+
+            // Initialize the student object if it doesn't exist
+            if (!studentMap[index]) {
+                studentMap[index] = {};
+            }
+
+            // Add the property to the student object
+            studentMap[index][propertyPath] = detail.value;
         }
+    });
 
-        console.log(`Accessing part '${part}' of the path '${path}' at index ${i}`);
+    // Convert the map to an array
+    return Object.values(studentMap);
+};
 
-        if (part.match(/^\d+$/)) { // If the part is an index
-            current = current[parseInt(part, 10)]; // Access specific index in the array
-        } else {
-            current = current[part];
-        }
 
-        if (current === undefined) {
-            console.log(`No data found at '${part}' in path '${path}'`);
-        } else if (Array.isArray(current) && i < parts.length - 1) {
-            // Handle array but only if it's not the last part of the path
-            console.log(`Data at '${part}' is an array. Proceeding to next part of the path.`);
-            current = current[0]; // Continue with the first element, or modify this as needed
-        } else if (Array.isArray(current) && i === parts.length - 1) {
-            console.log(`Data at '${part}' is an array. Collecting data from all items.`);
-            return current; // Return the entire array if it's the last part of the path
-        } else {
-            console.log(`Data found at '${part}' in path '${path}': `, current);
-        }
-    }
-
-    return current;
-}
+const createDataFrameFromDetails = (refactoredDetails) => {
+    // Create a DataFrame from the refactored details array
+    const df = new DataFrame(refactoredDetails);
+    return df;
+  };
+  
 
 // Function to fetch data by resolving each path to the corresponding data in the dataset documents.
 async function fetchDataByPaths(datasetId, paths) {
@@ -112,7 +104,7 @@ async function fetchDataByPaths(datasetId, paths) {
         extractValues(dataset.toObject(), pathParts, '');
     });
 
-    console.log("Final extracted data ready for DataFrame:", dataExtracted);
+    // console.log("Final extracted data ready for DataFrame:", dataExtracted);
     return dataExtracted;
 }
 

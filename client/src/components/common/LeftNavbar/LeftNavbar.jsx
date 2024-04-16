@@ -10,15 +10,13 @@ import contactIcon from '../../../assets/images/contact.png';
 
 const LeftNavbar = () => {
     const location = useLocation();
-    const navigate = useNavigate(); // Instantiate useNavigate
+    const navigate = useNavigate(); 
 
-    // Define nav items
     const navItems = [
         { path: '/', icon: homeIcon, text: 'Home' },
         { path: '/about', icon: aboutIcon, text: 'About' },
         { path: '/datasets', icon: databaseIcon, text: 'Databases' },
         { path: '/questions', icon: databaseIcon, text: 'Questions' },
-        { path: '/settings', icon: servicesIcon, text: 'Settings' },
     ];
 
     return (

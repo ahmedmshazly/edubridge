@@ -13,7 +13,7 @@ import DatasetListDisplay from '../DatasetListDisplay/DatasetListDisplay.jsx';
 import DatasetDetail from '../DatasetDetail/DatasetDetail.jsx'; 
 
 const DatasetsContainer = () => {
-  const [currentView, setCurrentView] = useState('list'); // Default to showing the list
+  const [currentView, setCurrentView] = useState('list'); 
   const [selectedDatasetName, setSelectedDatasetName] = useState('');
   const { datasets, loading, deleteDataset, addDataset } = useDatasetsContext();
   const [searchTerm, setSearchTerm] = useState('');
@@ -26,7 +26,6 @@ const DatasetsContainer = () => {
   };
   
   useEffect(() => {
-    // Filter datasets based on the search term
     const filter = searchTerm === '' ? datasets : datasets.filter(dataset =>
       dataset.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
@@ -41,9 +40,9 @@ const DatasetsContainer = () => {
 
   const handleButtonClick = () => {
     if (currentView === 'list') {
-      setCurrentView('form'); // If the list is currently shown, switch to the form
+      setCurrentView('form'); 
     } else {
-      setCurrentView('list'); // If the form or 'Others' component is shown, switch back to the list
+      setCurrentView('list'); 
     }
   };
   const selectedDataset = datasets.find(dataset => dataset.name === selectedDatasetName);
@@ -79,7 +78,7 @@ const DatasetsContainer = () => {
         <DatasetAddForm
           addDataset={addDataset}
           setIsUploading={setIsUploading}
-          setShowUploadForm={() => setCurrentView('list')} // Adjusted for consistency
+          setShowUploadForm={() => setCurrentView('list')} 
           isUploading={isUploading}
         />
       )}

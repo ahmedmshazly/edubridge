@@ -28,7 +28,7 @@ const DataCategorizationSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Please specify the type of the dataset'],
     enum: ['canvas', 'otherType1', 'otherType2'],
-    unique: true // Ensure no duplicate types are allowed
+    unique: true 
   },
   additionalInfo: mongoose.Schema.Types.Mixed
 }, {

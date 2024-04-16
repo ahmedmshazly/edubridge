@@ -4,7 +4,6 @@ import './ValidationNotesComponent.css'
 const ValidationNotesComponent = ({ validationNotes }) => {
     const [expandedStudentId, setExpandedStudentId] = useState(null);
 
-    // Function to create a human-readable explanation of each note
     const explainNote = (note) => {
         const optional = note.endsWith('(optional)');
         const [studentInfo, courseInfo] = note.split('.courses.');
@@ -14,7 +13,6 @@ const ValidationNotesComponent = ({ validationNotes }) => {
         return `For student ${studentId}, ${action} the page views for Course ${courseId}.`;
     };
 
-    // Process and group notes by student
     const groupedNotes = validationNotes.reduce((acc, note) => {
         const studentId = note.match(/Student_(\d+)/)[1];
         acc[studentId] = acc[studentId] || [];

@@ -1,5 +1,5 @@
 import React from 'react';
-import './LoginBg.css'; // Ensure the path matches your file structure
+import './LoginBg.css'; 
 
 const LoginBg = () => {
   return (

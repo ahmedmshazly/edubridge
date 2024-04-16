@@ -1,6 +1,6 @@
 import React from 'react';
-import { useState, useRef } from 'react'; // Use useRef for the file input reference
-import './DatasetAddForm.css'; // Ensure you have this CSS file for styling
+import { useState, useRef } from 'react'; 
+import './DatasetAddForm.css'; 
 
 const DatasetAddForm = ({ addDataset, setIsUploading, setShowUploadForm, isUploading }) => {
     const [uploadFormData, setUploadFormData] = useState({
@@ -9,9 +9,8 @@ const DatasetAddForm = ({ addDataset, setIsUploading, setShowUploadForm, isUploa
         description: '',
         file: null,
     });
-    const [dragOver, setDragOver] = useState(false); // State to track if drag is over the drop area
+    const [dragOver, setDragOver] = useState(false); 
 
-    // Using useRef hook for the file input reference
     const fileInputRef = useRef(null);
 
     const handleFormChange = (event) => {
@@ -65,7 +64,7 @@ const DatasetAddForm = ({ addDataset, setIsUploading, setShowUploadForm, isUploa
         try {
             await addDataset(formData);
             alert('Dataset uploaded successfully');
-            setShowUploadForm(false); // Hide the form on success
+            setShowUploadForm(false); 
         } catch (error) {
             alert(error.message);
         } finally {

@@ -1,5 +1,5 @@
 import React from 'react';
-import './RegisterationBg.css'; // Ensure the path matches your file structure
+import './RegisterationBg.css';
 
 const RegisterationBg = () => {
   return (

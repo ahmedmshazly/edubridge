@@ -1,6 +1,8 @@
 const express = require('express');
 const requireAuth = require('../middleware/requireAuth');
 const { processQuestion } = require('../middleware/processQuestion');
+const { processClustering } = require('../middleware/unsupervised');
+const { analysisMiddleware } = require('../middleware/gptApi');
 
 const router = express.Router();
 const {
@@ -17,7 +19,7 @@ router.use(requireAuth);
 
 
 // Route to create a new question
-router.post('/', processQuestion, createQuestion);
+router.post('/', processQuestion, processClustering, analysisMiddleware, createQuestion);
 
 // Route to get questions filtered by categories
 router.get('/by-categories', getQuestionsByCategories);

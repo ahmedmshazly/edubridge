@@ -2,7 +2,6 @@ import React from "react";
 import { useLogout } from "../../hooks/useLogout";
 import { useNavigate } from 'react-router-dom';
 import './QuestionsPage.css'
-// import './QuestionsPage.css'; // Ensure the path matches your file structure
 import LeftSidebar from "../../components/DatasetsPageComponents/LeftSidebar/LeftSidebar";
 import QuestionsContainer from "../../components/QuestionPageComponents/QuestionsContainer/QuestionsContainer";
 

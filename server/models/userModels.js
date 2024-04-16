@@ -13,8 +13,8 @@ const userSchema = new Schema({
         type: String,
         required: true,
         unique: true,
-        lowercase: true, // Ensure the email is stored in lowercase
-        trim: true, // Remove whitespace from both ends of a string
+        lowercase: true,
+        trim: true, 
     },
     password: {
         type: String,

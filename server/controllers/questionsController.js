@@ -3,13 +3,14 @@ const Question = require('../models/QuestionSchema');
 // Create a new question with reference to dataset
 exports.createQuestion = async (req, res) => {
     try {
-        const { questionText, categories, dataset } = req.body;
+        const { questionText, categories, dataset, answer } = req.body;
         const userId = req.user._id;
         const newQuestion = await Question.create({
             questionText: questionText,
             categories: categories,
             createdBy: userId,
-            dataset: dataset
+            dataset: dataset,
+            answer: answer 
         });
         // console.log(newQuestion)
         res.status(201).json({ success: true, data: newQuestion });
@@ -81,7 +82,6 @@ exports.deleteQuestion = async (req, res) => {
       }
   
       // Check if the user is authorized to delete the question
-      // This assumes you have some owner or createdBy field in your question model
       if (question.createdBy.toString() !== req.user._id.toString()) {
         return res.status(403).json({ success: false, message: "Not authorized to delete this question" });
       }

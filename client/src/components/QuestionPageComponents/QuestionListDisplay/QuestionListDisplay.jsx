@@ -1,7 +1,6 @@
 import React from 'react';
-import deleteIcon from '../../../assets/images/logo.png'; // Ensure the path is correct
-import './QuestionListDisplay.css'; // Ensure CSS is styled appropriately
-
+import deleteIcon from '../../../assets/images/delete.png'; 
+import './QuestionListDisplay.css';
 const QuestionListDisplay = ({ filteredQuestions, deleteQuestion, handleCardClick, isLoading }) => {
     // Handling the loading state
     if (isLoading) {

@@ -1,9 +1,6 @@
-const Dataset = require('../models/datasetModel'); // Adjust the path as needed
-const { calculateMetrics } = require('../modules/analytics/datasetAnalytics'); // Ensure correct path
-/**
- * Add a new dataset to the database.
- * Assumes dataset details are in the request body and the dataset file is uploaded as 'dataset' field.
- */
+const Dataset = require('../models/datasetModel'); 
+const { calculateMetrics } = require('../modules/analytics/datasetAnalytics'); 
+
 
 
 exports.addDataset = async (req, res) => {
@@ -12,8 +9,7 @@ exports.addDataset = async (req, res) => {
     console.log(req)
     const userId = req.user._id;
 
-    // Assuming JSON data is directly available in req.file.buffer
-    const rawData = req.file.buffer.toString(); // Convert buffer to string
+    const rawData = req.file.buffer.toString(); 
     const data = JSON.parse(rawData); // Parse string to JSON
 
     // Call calculateMetrics to get a comprehensive metrics object
@@ -24,10 +20,6 @@ exports.addDataset = async (req, res) => {
       return res.status(400).json({ message: "Invalid metrics calculated, cannot save dataset" });
     }
 
-    // metrics.coursesMetrics.forEach(courseMetric => {
-    //   console.log(courseMetric.engagementMetricsDaily);
-    //   console.log(courseMetric.participationMetricsDaily);
-    // });
 
     // Create and save the new dataset document with all calculated metrics and additional data
     const dataset = await Dataset.create({

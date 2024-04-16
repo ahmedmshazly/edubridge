@@ -24,7 +24,6 @@ const ParticipationAnalysis = ({ dataset }) => {
   // State for data type selection
   const [selectedDataType, setSelectedDataType] = useState('participation');
 
-  // Filtered data based on the selected data type
   const filteredData = useMemo(() => {
     switch (selectedDataType) {
       case 'communication':

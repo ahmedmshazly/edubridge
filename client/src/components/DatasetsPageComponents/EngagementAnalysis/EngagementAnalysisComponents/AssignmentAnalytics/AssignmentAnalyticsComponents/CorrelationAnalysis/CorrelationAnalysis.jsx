@@ -14,7 +14,6 @@ const AssignmentScoreDistribution = ({ dataset }) => {
     });
 
     useEffect(() => {
-        // Transform the dataset if needed or set it directly
         const transformedData = dataset.metrics[0].overallStats.assignmentsStatistics.students;
         setAssignments(transformedData);
     }, [dataset]);
@@ -24,9 +23,9 @@ const AssignmentScoreDistribution = ({ dataset }) => {
             const scores = assignments
               .map((student, index) => ({
                   label: `Student ${index + 1}`,
-                  score: student.scores[selectedAssignmentId], // Assuming scores are accessed by assignmentId
+                  score: student.scores[selectedAssignmentId], 
               }))
-              .filter(entry => entry.score !== undefined); // Ensure we have a score for the assignment
+              .filter(entry => entry.score !== undefined); 
 
             setChartData({
                 labels: scores.map(entry => entry.label),

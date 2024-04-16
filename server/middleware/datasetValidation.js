@@ -1,5 +1,4 @@
-const { validateCanvasStructure } = require('../validations/canvasValidation'); // Adjust path as needed
-// Import other templates as needed
+const { validateCanvasStructure } = require('../validations/canvasValidation'); 
 
 exports.checkDatasetType = (req, res, next) => {
     const { type } = req.body;
@@ -33,7 +32,6 @@ exports.validateDatasetStructure = (req, res, next) => {
         }
 
         // Handle validation results
-        // Adjust to proceed with optional field issues, storing notes
         if (validationResults.missing.length > 0 || validationResults.extras.length > 0) {
             return res.status(400).json({
                 message: "Dataset structure validation failed for required or unexpected fields.",

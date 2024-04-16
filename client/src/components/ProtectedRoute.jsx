@@ -1,9 +1,9 @@
 import React from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
-import { useAuth } from '../hooks/useAuth'; // Adjust the path as necessary
+import { useAuth } from '../hooks/useAuth'; 
 
 const ProtectedRoute = ({ redirectPath = '/login', allowedRoles = [] }) => {
-    const { isAuthenticated, userRoles } = useAuth(); // Assuming useAuth now also provides user roles
+    const { isAuthenticated, userRoles } = useAuth();
 
     // If not authenticated, redirect to the given path
     if (!isAuthenticated) {
